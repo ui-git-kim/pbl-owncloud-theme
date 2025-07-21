@@ -65,6 +65,13 @@
     background-attachment: fixed;
     min-height: 100vh;
     color: var(--text-primary);
+    -ms-flex-direction: row !important;
+	-ms-flex-pack: center !important;
+	-ms-flex-align: center !important;
+	display: flex !important;
+	flex-direction: row !important;
+	align-self: center !important;
+	align-items: center !important;
     position: relative;
     overflow: hidden;
 }
