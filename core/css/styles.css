@@ -59,15 +59,17 @@
    LOGIN PAGE 
    ============================================================================= */
 
-/* Login page background */
+/* Login page background with enhanced animated circles */
 #body-login {
     background: linear-gradient(135deg, var(--primary-dark) 20%, var(--secondary-dark) 100%) !important;
     background-attachment: fixed;
     min-height: 100vh;
     color: var(--text-primary);
+    position: relative;
+    overflow: hidden;
 }
 
-/* Alternative: Add subtle texture overlay */
+/* Enhanced animated purple circles overlay */
 #body-login::before {
     content: '';
     position: fixed;
@@ -76,83 +78,503 @@
     right: 0;
     bottom: 0;
     background: 
-        radial-gradient(circle at 20% 20%, rgba(156, 86, 157, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(156, 86, 157, 0.05) 0%, transparent 50%);
+        radial-gradient(circle at 25% 25%, rgba(156, 86, 157, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 75% 75%, rgba(156, 86, 157, 0.12) 0%, transparent 35%),
+        radial-gradient(circle at 50% 10%, rgba(156, 86, 157, 0.08) 0%, transparent 30%),
+        radial-gradient(circle at 20% 80%, rgba(156, 86, 157, 0.1) 0%, transparent 25%);
     pointer-events: none;
     z-index: 1;
+    animation: circleFloat 20s ease-in-out infinite;
 }
 
-/* Login form container */
+/* Floating animation for the purple circles */
+@keyframes circleFloat {
+    0%, 100% {
+        transform: translateY(0px) scale(1);
+        opacity: 0.8;
+    }
+    25% {
+        transform: translateY(-10px) scale(1.02);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(5px) scale(0.98);
+        opacity: 0.9;
+    }
+    75% {
+        transform: translateY(-5px) scale(1.01);
+        opacity: 1;
+    }
+}
+
+/* Login form container - more compact */
 #body-login .wrapper {
     background-color: var(--card-bg) !important;
-    border-radius: 5px;
+    border-radius: 15px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(20px);
     border: 1px solid var(--border-color-primary);
+    max-width: 400px !important;
+    width: 90% !important;
+    margin: 50px auto !important;
+    padding: 30px !important;
+    position: relative;
+    z-index: 2;
 }
 
-/* Login logo */
+/* Smaller, more compact login logo */
 #body-login .logo {
     background-image: url('../img/logo.svg') !important;
-    width: 560px !important;
-    height: 120px !important;
+    width: 320px !important;
+    height: 70px !important;
     background-size: contain !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
     filter: brightness(1.2);
+    margin: 0 auto 30px auto !important;
 }
 
-/* Login form inputs */
+/* Login form inputs with correct styling */
 #body-login input[type="text"],
 #body-login input[type="password"],
 #body-login input[type="email"] {
     background-color: var(--input-bg) !important;
     border: none !important;
-    border-bottom: 1px solid var(--text-primary) !important;
-    border-radius: 5px;
+    border-bottom: 2px solid var(--text-primary) !important;
+    border-radius: 8px 8px 0 0 !important;
     color: var(--text-secondary) !important;
-    padding: 15px 20px;
+    padding: 15px 20px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    margin-bottom: 20px !important;
+    font-size: 16px !important;
+    transition: all 0.3s ease !important;
 }
 
 #body-login input[type="text"]:focus,
 #body-login input[type="password"]:focus,
 #body-login input[type="email"]:focus {
-    border-color: var(--accent-purple) !important;
+    border-bottom-color: var(--accent-purple) !important;
     box-shadow: 0 0 0 3px rgba(156, 86, 157, 0.2) !important;
     outline: none !important;
     background-color: var(--secondary-dark) !important;
+    transform: translateY(-2px) !important;
 }
 
-/* Login button */
+/* Input labels */
+#body-login label {
+    color: var(--text-primary) !important;
+    font-weight: 500 !important;
+    margin-bottom: 8px !important;
+    display: block !important;
+    font-size: 14px !important;
+}
+
+/* Login button - full width and enhanced */
 #body-login input[type="submit"],
-#body-login button[type="submit"] {
+#body-login button[type="submit"],
+#body-login #submit {
     background: linear-gradient(135deg, var(--accent-purple) 0%, var(--accent-purple-dark) 100%) !important;
     color: var(--text-secondary) !important;
     border: none !important;
-    border-radius: 8px;
-    padding: 12px 24px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    border-radius: 12px !important;
+    padding: 15px 24px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.8px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin-top: 20px !important;
+    margin-bottom: 0 !important;
+    font-size: 16px !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    overflow: hidden !important;
+    display: block !important;
 }
 
 #body-login input[type="submit"]:hover,
 #body-login button[type="submit"]:hover {
     background: linear-gradient(135deg, var(--accent-purple-dark) 0%, var(--accent-purple) 100%) !important;
-    transform: translateY(-1px);
-    box-shadow: 0 8px 25px rgba(156, 86, 157, 0.3);
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 30px rgba(156, 86, 157, 0.4) !important;
 }
 
+#body-login input[type="submit"]:active,
+#body-login button[type="submit"]:active {
+    transform: translateY(0px) !important;
+    box-shadow: 0 5px 15px rgba(156, 86, 157, 0.3) !important;
+}
+
+/* Button loading state */
+#body-login input[type="submit"]:disabled,
+#body-login button[type="submit"]:disabled {
+    opacity: 0.7 !important;
+    cursor: not-allowed !important;
+    transform: none !important;
+}
+
+/* Login form styling improvements */
+#body-login fieldset {
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+#body-login .wrapper form {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* =============================================================================
+   ALTERNATIVE LOGIN METHODS & LOST PASSWORD STYLING
+   ============================================================================= */
+
+/* Alternative login section */
+#alternative-logins,
+.alternative-logins {
+    margin-top: 20px !important;
+    padding-top: 20px !important;
+    border-top: 1px solid var(--border-color-primary) !important;
+    text-align: center !important;
+}
+
+/* Alternative login title */
+#alternative-logins h2,
+.alternative-logins h2 {
+    color: var(--text-primary) !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    margin-bottom: 15px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* Alternative login buttons/links */
+#alternative-logins a,
+.alternative-logins a,
+#alternative-logins button,
+.alternative-logins button {
+    background-color: var(--secondary-dark) !important;
+    border: 1px solid var(--border-color-secondary) !important;
+    color: var(--text-primary) !important;
+    border-radius: 8px !important;
+    padding: 12px 20px !important;
+    display: block !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    margin-bottom: 10px !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+}
+
+#alternative-logins a:hover,
+.alternative-logins a:hover,
+#alternative-logins button:hover,
+.alternative-logins button:hover {
+    background-color: var(--hover-bg) !important;
+    border-color: var(--accent-purple) !important;
+    color: var(--accent-purple-bright) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* Lost password link */
+#lost-password,
+.lost-password,
+#body-login .lost-password,
+#body-login .lost-password a,
+#body-login p.info a {
+    color: var(--accent-purple-bright) !important;
+    text-decoration: none !important;
+    font-size: 14px !important;
+    display: block !important;
+    text-align: center !important;
+    margin-top: 15px !important;
+    padding: 8px !important;
+    border-radius: 6px !important;
+    transition: all 0.3s ease !important;
+}
+
+#lost-password:hover,
+.lost-password:hover,
+#body-login .lost-password a:hover,
+#body-login p.info a:hover {
+    color: var(--text-secondary) !important;
+    background-color: var(--hover-bg) !important;
+    text-decoration: underline !important;
+}
+
+/* Remember login checkbox */
+#body-login .remember-login-container,
+#body-login .checkbox {
+    margin: 15px 0 !important;
+    text-align: left !important;
+}
+
+#body-login .remember-login-container label,
+#body-login .checkbox label {
+    color: var(--text-primary) !important;
+    font-size: 14px !important;
+    display: flex !important;
+    align-items: center !important;
+    cursor: pointer !important;
+}
+
+#body-login input[type="checkbox"] {
+    appearance: none !important;
+    background-color: var(--input-bg) !important;
+    border: 1px solid var(--border-color-secondary) !important;
+    border-radius: 4px !important;
+    width: 16px !important;
+    height: 16px !important;
+    cursor: pointer !important;
+    position: relative !important;
+    margin-right: 10px !important;
+    flex-shrink: 0 !important;
+}
+
+#body-login input[type="checkbox"]:checked {
+    background-color: var(--accent-purple) !important;
+    border-color: var(--accent-purple) !important;
+}
+
+#body-login input[type="checkbox"]:checked::after {
+    content: "✓" !important;
+    color: var(--text-secondary) !important;
+    font-size: 12px !important;
+    position: absolute !important;
+    top: 0px !important;
+    left: 2px !important;
+    font-weight: bold !important;
+}
+
+/* Login messages and info */
+#body-login .login-additional,
+#body-login .additional-login-info {
+    margin: 15px 0 !important;
+    padding: 12px 16px !important;
+    background-color: rgba(156, 86, 157, 0.1) !important;
+    border: 1px solid rgba(156, 86, 157, 0.3) !important;
+    border-radius: 8px !important;
+    color: var(--text-primary) !important;
+    font-size: 14px !important;
+    text-align: center !important;
+}
+
+/* SSO/SAML/OAuth login buttons */
+#body-login .sso-login,
+#body-login .saml-login,
+#body-login .oauth-login {
+    background: linear-gradient(135deg, var(--secondary-dark) 0%, var(--tertiary-dark) 100%) !important;
+    border: 1px solid var(--border-color-secondary) !important;
+    color: var(--text-primary) !important;
+    border-radius: 8px !important;
+    padding: 12px 20px !important;
+    display: block !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    margin-bottom: 10px !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+    text-align: center !important;
+}
+
+#body-login .sso-login:hover,
+#body-login .saml-login:hover,
+#body-login .oauth-login:hover {
+    background: linear-gradient(135deg, var(--accent-purple) 0%, var(--accent-purple-dark) 100%) !important;
+    color: var(--text-secondary) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 5px 15px rgba(156, 86, 157, 0.3) !important;
+}
+
+/* Login form wrapper adjustments for alternative logins */
+#body-login .wrapper {
+    padding-bottom: 20px !important; /* Extra space for alternative login elements */
+}
+
+/* Two-factor authentication elements */
+#body-login .two-factor,
+#body-login .backup-codes {
+    margin-top: 15px !important;
+    padding: 15px !important;
+    background-color: var(--secondary-dark) !important;
+    border-radius: 8px !important;
+    border: 1px solid var(--border-color-primary) !important;
+}
+
+#body-login .two-factor h3,
+#body-login .backup-codes h3 {
+    color: var(--text-secondary) !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    margin-bottom: 10px !important;
+}
+
+#body-login .two-factor input,
+#body-login .backup-codes input {
+    background-color: var(--input-bg) !important;
+    border: none !important;
+    border-bottom: 1px solid var(--text-primary) !important;
+    color: var(--text-secondary) !important;
+    border-radius: 5px !important;
+    padding: 12px 16px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    margin-bottom: 15px !important;
+    font-family: monospace !important;
+    text-align: center !important;
+    letter-spacing: 2px !important;
+}
+
+/* Login form dividers */
+#body-login .login-divider {
+    position: relative !important;
+    text-align: center !important;
+    margin: 20px 0 !important;
+    color: var(--text-muted) !important;
+    font-size: 14px !important;
+}
+
+#body-login .login-divider::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 1px !important;
+    background-color: var(--border-color-primary) !important;
+    z-index: 1 !important;
+}
+
+#body-login .login-divider span {
+    background-color: var(--card-bg) !important;
+    padding: 0 15px !important;
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+/* Login help/support links */
+#body-login .login-help,
+#body-login .support-links {
+    margin-top: 20px !important;
+    text-align: center !important;
+}
+
+#body-login .login-help a,
+#body-login .support-links a {
+    color: var(--text-muted) !important;
+    text-decoration: none !important;
+    font-size: 13px !important;
+    margin: 0 10px !important;
+}
+
+#body-login .login-help a:hover,
+#body-login .support-links a:hover {
+    color: var(--accent-purple-bright) !important;
+    text-decoration: underline !important;
+}
+
+/* Error and info messages */
 #body-login p.info,
 #body-login .warning,
 #body-login .update,
 #body-login .error {
     color: var(--text-primary) !important;
+    background-color: rgba(156, 86, 157, 0.1) !important;
+    border: 1px solid rgba(156, 86, 157, 0.3) !important;
+    border-radius: 8px !important;
+    padding: 12px 16px !important;
+    margin: 15px 0 !important;
+    font-size: 14px !important;
+}
+
+#body-login .error {
+    background-color: rgba(217, 83, 79, 0.1) !important;
+    border-color: rgba(217, 83, 79, 0.3) !important;
+    color: #d9534f !important;
 }
 
 #body-login p.info a,
 #body-login .update a {
     color: var(--accent-purple-bright) !important;
+    text-decoration: none !important;
+}
+
+#body-login p.info a:hover,
+#body-login .update a:hover {
+    color: var(--text-secondary) !important;
+    text-decoration: underline !important;
+}
+
+/* Footer on login page */
+#body-login .footer {
+    position: fixed !important;
+    bottom: 20px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    color: var(--text-muted) !important;
+    font-size: 14px !important;
+    z-index: 2 !important;
+}
+
+#body-login .footer a {
+    color: var(--accent-purple-bright) !important;
+    text-decoration: none !important;
+}
+
+#body-login .footer a:hover {
+    color: var(--text-secondary) !important;
+    text-decoration: underline !important;
+}
+
+/* Responsive adjustments for login */
+@media (max-width: 768px) {
+    #body-login .wrapper {
+        margin: 20px auto !important;
+        padding: 25px !important;
+        max-width: 350px !important;
+    }
+    
+    #body-login .logo {
+        width: 280px !important;
+        height: 60px !important;
+        margin-bottom: 25px !important;
+    }
+    
+    #body-login input[type="text"],
+    #body-login input[type="password"],
+    #body-login input[type="email"] {
+        padding: 12px 16px !important;
+        font-size: 16px !important; /* Prevents zoom on iOS */
+    }
+    
+    #body-login input[type="submit"],
+    #body-login button[type="submit"] {
+        padding: 12px 20px !important;
+        font-size: 15px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    #body-login .wrapper {
+        margin: 15px !important;
+        padding: 20px !important;
+        max-width: none !important;
+        width: calc(100% - 30px) !important;
+    }
+    
+    #body-login .logo {
+        width: 240px !important;
+        height: 50px !important;
+        margin-bottom: 20px !important;
+    }
 }
 
 /* =============================================================================
