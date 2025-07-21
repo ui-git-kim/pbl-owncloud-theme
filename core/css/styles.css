@@ -79,8 +79,6 @@
     bottom: 0;
     background: 
         radial-gradient(circle at 25% 25%, rgba(156, 86, 157, 0.15) 0%, transparent 40%),
-        radial-gradient(circle at 75% 75%, rgba(156, 86, 157, 0.12) 0%, transparent 35%),
-        radial-gradient(circle at 50% 10%, rgba(156, 86, 157, 0.08) 0%, transparent 30%),
         radial-gradient(circle at 20% 80%, rgba(156, 86, 157, 0.1) 0%, transparent 25%);
     pointer-events: none;
     z-index: 1;
@@ -107,17 +105,23 @@
     }
 }
 
-/* Login form container - more compact */
+/* Login form container */
 #body-login .wrapper {
     background-color: var(--card-bg) !important;
     border-radius: 15px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(20px);
     border: 1px solid var(--border-color-primary);
-    max-width: 400px !important;
-    width: 90% !important;
-    margin: 50px auto !important;
-    padding: 30px !important;
+    margin: 0 auto -70px;
+	width: 50%;
+	min-height: 50vh;
+	-ms-flex-direction: row !important;
+	-ms-flex-pack: center !important;
+	-ms-flex-align: center !important;
+	display: flex !important;
+	flex-direction: row !important;
+	align-self: center !important;
+	align-items: center !important;
     position: relative;
     z-index: 2;
 }
