@@ -112,17 +112,21 @@
 
 /* Small modal-style login box */
 #body-login .wrapper {
-    background-color: var(--card-bg) !important;
+    background-color: #272727 !important;
     border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-    border: 1px solid var(--border-color-primary);
-    width: 380px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    border: 1px solid #3d3d3d;
+    width: 420px;
     max-width: 90vw;
-    padding: 40px 30px 30px 30px !important;
+    min-height: 400px;
+    padding: 40px 40px 30px 40px !important;
     margin: 0 !important;
     position: relative;
     z-index: 2;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* Logo */
