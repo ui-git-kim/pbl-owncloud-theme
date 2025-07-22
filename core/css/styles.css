@@ -389,9 +389,9 @@
     background-position: center !important;
 }
 
-/* #body-login form label {
-    /* Add form label styles 
-} */
+#body-login form label {
+    display: none;
+}
 
 /* Checkbox label overrides */
 /* #body-login form .warning input[type="checkbox"]:hover+label,
