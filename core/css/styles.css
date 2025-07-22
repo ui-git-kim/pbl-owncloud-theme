@@ -1247,6 +1247,13 @@ button:hover {
    FORM ELEMENTS
    ============================================================================= */
 
+input#user, input#password {
+    background-color: var(--input-bg) !important;
+    border: none !important;
+    border-bottom: 1px solid var(--text-primary) !important;
+    color: var(--text-secondary) !important;
+}
+
 /* Input fields */
 input[type="text"],
 input[type="password"],
