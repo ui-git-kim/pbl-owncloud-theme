@@ -1295,6 +1295,7 @@ input[type="tel"]:hover, input[type="tel"]:focus, input[type="tel"]:active,
 input[type="url"]:hover, input[type="url"]:focus, input[type="url"]:active,
 input[type="time"]:hover, input[type="time"]:focus, input[type="time"]:active,
 textarea:hover, textarea:focus, textarea:active {
+    background: var(--input-bg) !important;
     border-bottom-color: var(--accent) !important;
     box-shadow: 0 0 0 3px rgba(156, 86, 157, 0.2) !important;
 }
@@ -1365,7 +1366,7 @@ textarea::placeholder {
     border-radius: 0 0 15px 15px;
 }
 
-/* Modal form elements inherit from main form styling */
+/* Modal form elements inherit from main form styling
 .oc-dialog input[type="text"],
 .oc-dialog input[type="password"],
 .oc-dialog input[type="email"],
@@ -1443,7 +1444,7 @@ textarea::placeholder {
     margin-bottom: 20px;
 }
 
-/* Settings checkboxes */
+/* Settings checkboxes
 input[type="checkbox"] {
     appearance: none;
     background-color: var(--input-bg) !important;
@@ -1470,7 +1471,7 @@ input[type="checkbox"]:checked::after {
     left: 2px;
 }
 
-/* Settings radio buttons */
+/* Settings radio buttons
 input[type="radio"] {
     appearance: none;
     background-color: var(--input-bg) !important;
@@ -1634,7 +1635,7 @@ input[type="radio"]:checked::after {
 /* =============================================================================
    FOOTER 
    ============================================================================= */
-   .footer {
+.footer {
     background-color: var(--secondary-bg) !important;
     color: var(--text-primary) !important;
     border-top: 1px solid var(--border-color-secondary) !important;
@@ -1648,7 +1649,7 @@ input[type="radio"]:checked::after {
 }
 
 .footer a:hover {
-    color: var(--text-secondary) !important;
+    color: var(--accent-dark) !important;
     text-decoration: underline !important;
 }
 
