@@ -104,6 +104,13 @@
     --shadow-glow: 0 0 20px var(--shadow-brand);
 }
 
+/* header color */
+#body-user #header,
+#body-settings #header,
+#body-public #header {
+	background-color:var(--primary-bg);
+}
+
 /* =============================================================================
    LOGIN PAGE ONLY - SIMPLIFIED STYLES
    ============================================================================= */
