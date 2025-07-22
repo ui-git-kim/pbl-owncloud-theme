@@ -312,6 +312,7 @@
 #body-login {
     background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 100%) !important;
     color: var(--text-primary);
+    height: 100vh;
 }
 
 /* Animated purple spotlight circles */
@@ -520,13 +521,16 @@
     transform: translateY(-2px) !important;
 }
 
-/* Input grouping 
+/* Input grouping */
 .grouptop,
 .groupmiddle,
 .groupbottom {
-    /* Add input group styles 
+    background-color: var(--secondary-bg) !important;
+    border: none !important;
+    border-bottom: 1px solid var(--text-primary) !important;
+    border-radius: var(--space-2);
 }
-*/
+
 #body-login .grouptop input,
 .grouptop input,
 #body-login .groupmiddle input,
