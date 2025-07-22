@@ -526,14 +526,17 @@
 .groupbottom {
     /* Add input group styles 
 }
-
+*/
 #body-login .grouptop input,
 .grouptop input,
 #body-login .groupmiddle input,
 .groupmiddle input,
 #body-login .groupbottom input,
 .groupbottom input {
-    /* Add grouped input styles 
+    background-color: var(--secondary-bg) !important;
+    border: none !important;
+    border-bottom: 1px solid var(--text-primary) !important;
+    border-radius: var(--space-2);
 }
 
 /* Submit wrapper */
