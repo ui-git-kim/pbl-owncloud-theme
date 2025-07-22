@@ -310,11 +310,8 @@
    
 /* Main login body */
 #body-login {
-    background-image: url("../img/background.jpg") !important;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 100%) !important;
+    color: var(--text-primary);
 }
 
 /* Animated purple spotlight circles */
@@ -384,8 +381,8 @@
 /* Logo */
 #body-login .logo {
     background-image: url('../img/logo.svg') !important;
-    width: 140px !important;
-    height: 30px !important;
+    width: 280px !important;
+    height: 60px !important;
     background-size: contain !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
@@ -849,13 +846,21 @@ html #body-login button[type="submit"]:hover {
     /* Add remember login container styles 
 }
 
-/* Vertical alignment container 
+/* Vertical alignment container */
 #body-login .v-align {
-    /* Add vertical alignment styles 
+    background-color: var(--primary-bg);
+    border: 1px solid var(--border-color-primary) !important;
+    border-radius: 15px !important;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(10px) !important;
 }
 
 #body-login.has-theme .v-align {
-    /* Add themed vertical alignment styles
+    background-color: var(--primary-bg);
+    border: 1px solid var(--border-color-primary) !important;
+    border-radius: 15px !important;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(10px) !important;
 }
 
 
