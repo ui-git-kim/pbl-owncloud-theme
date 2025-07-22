@@ -4,11 +4,244 @@
    ============================================================================= */
 
 /* =============================================================================
-   IMPORTS
+   PBL OWNCLOUD THEME - CSS VARIABLES
+   core/css/variables.css
+   
+   This file contains all theme colors, sizes, fonts, and other design tokens.
+   Import this file first in all other CSS files to use these variables.
    ============================================================================= */
 
-@import url('variables.css');
-@import url('login.css');
+   /* =============================================================================
+   FONT IMPORTS
+   Must be at the very top before any other CSS rules
+   ============================================================================= */
+
+/* Primary font: Josefin Sans */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+/* Alternative font: Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    /* =============================================================================
+    BRAND COLORS
+    ============================================================================= */
+
+    /* Primary Purple Palette */
+    --accent: #9C569D;          /* Main brand color - use for buttons, links, highlights */
+    --accent-light: #BD7EC5;    /* Lighter purple - use for hover states, secondary elements */
+    --accent-dark: #804881;     /* Darker purple - use for active states, borders */
+
+    /* Purple with transparency - useful for overlays and subtle effects */
+    --accent-purple-10: rgba(156, 86, 157, 0.1);   /* 10% opacity */
+    --accent-purple-20: rgba(156, 86, 157, 0.2);   /* 20% opacity */
+    --accent-purple-30: rgba(156, 86, 157, 0.3);   /* 30% opacity */
+
+    /* =============================================================================
+        THEME BACKGROUND COLORS
+        ============================================================================= */
+
+    /* Main backgrounds */
+    --primary-bg: #272727;           /* Main background color - neutral-background */
+    --secondary-bg: #3D3D3D;         /* Secondary background - neutral-dark-grey */
+    --tertiary-bg: #4d4d4d;          /* Tertiary background - slightly lighter for hover states */
+
+    /* Card and content backgrounds */
+    --card-bg: var(--primary-bg);                /* Card backgrounds (same as primary) */
+    --input-bg: var(--secondary-bg);               /* Input field backgrounds */
+    --modal-bg: var(--primary-bg);            /* Modal/dialog backgrounds */
+    --sidebar-bg: var(--secondary-bg);           /* Sidebar backgrounds */
+
+    /* =============================================================================
+        TEXT COLORS
+        ============================================================================= */
+
+    /* Primary text colors */
+    --text-primary: #BEBEBE;           /* Main text color - neutral-text */
+    --text-secondary: #ffffff;         /* High contrast text - neutral-white */
+    --text-muted: #666666;             /* Muted/disabled text */
+
+    /* Text on colored backgrounds */
+    --text-on-accent: #ffffff;         /* Text on purple backgrounds */
+
+    /* =============================================================================
+        BORDER COLORS
+        ============================================================================= */
+
+    /* Border colors for different background contexts */
+    --border-color-primary:var(--secondary-bg);   /* Borders on primary backgrounds */
+    --border-color-secondary: var(--tertiary-bg); /* Borders on secondary backgrounds */
+    --border-color-accent: var(--accent); /* Purple borders for highlights */
+
+    /* =============================================================================
+        INTERACTIVE STATES
+        ============================================================================= */
+
+    /* Hover and focus states */
+    --hover-bg: rgba(156, 86, 157, 0.1); /* Purple tinted hover background */
+    --hover-border: var(--accent); /* Purple hover border */
+    --focus-ring: rgba(156, 86, 157, 0.2); /* Focus ring color */
+
+    /* Selection colors */
+    --selection-bg: var(--accent); /* Text selection background */
+    --selection-text: var(--text-secondary); /* Text selection color */
+
+    /* =============================================================================
+        STATUS COLORS
+        ============================================================================= */
+
+    /* Success, warning, error colors */
+    --success-color: #5cb85c;           /* Success messages and indicators */
+    --warning-color: #f0ad4e;           /* Warning messages and indicators */
+    --error-color: #d9534f;             /* Error messages and indicators */
+    --info-color: var(--accent); /* Info messages using brand color */
+
+    /* Status backgrounds with transparency */
+    --success-bg: rgba(92, 184, 92, 0.1);
+    --warning-bg: rgba(240, 173, 78, 0.1);
+    --error-bg: rgba(217, 83, 79, 0.1);
+    --info-bg: var(--accent-purple-10);
+
+    /* =============================================================================
+        SHADOWS AND EFFECTS
+        ============================================================================= */
+
+    /* Shadow colors */
+    --shadow-color: rgba(0, 0, 0, 0.5);     /* Standard shadow */
+    --shadow-light: rgba(0, 0, 0, 0.2);     /* Light shadow */
+    --shadow-heavy: rgba(0, 0, 0, 0.8);     /* Heavy shadow */
+    --shadow-brand: rgba(156, 86, 157, 0.3); /* Purple glow shadow */
+
+    /* Common shadow definitions */
+    --shadow-small: 0 2px 8px var(--shadow-light);
+    --shadow-medium: 0 4px 16px var(--shadow-color);
+    --shadow-large: 0 8px 32px var(--shadow-color);
+    --shadow-glow: 0 0 20px var(--shadow-brand);
+
+    /* =============================================================================
+        TYPOGRAPHY
+        ============================================================================= */
+
+    /* Font families */
+    --font-primary: 'Josefin Sans', 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-alternative: 'Inter', 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    /* Font sizes */
+    --font-size-xs: 12px;
+    --font-size-sm: 14px;
+    --font-size-base: 16px;
+    --font-size-lg: 18px;
+    --font-size-xl: 20px;
+    --font-size-2xl: 24px;
+    --font-size-3xl: 32px;
+
+    /* Font weights */
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    /* Line heights */
+    --line-height-tight: 1.2;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.8;
+
+    /* =============================================================================
+        SPACING AND SIZING
+        ============================================================================= */
+
+    /* Spacing scale (4px base unit) */
+    --space-1: 4px;   /* 0.25rem */
+    --space-2: 8px;   /* 0.5rem */
+    --space-3: 12px;  /* 0.75rem */
+    --space-4: 16px;  /* 1rem */
+    --space-5: 20px;  /* 1.25rem */
+    --space-6: 24px;  /* 1.5rem */
+    --space-8: 32px;  /* 2rem */
+    --space-10: 40px; /* 2.5rem */
+    --space-12: 48px; /* 3rem */
+    --space-16: 64px; /* 4rem */
+    --space-20: 80px; /* 5rem */
+
+    /* Component sizing */
+    --input-height: 48px;              /* Standard input height */
+    --button-height: 48px;             /* Standard button height */
+    --header-height: 60px;             /* Header height */
+    --sidebar-width: 280px;            /* Sidebar width */
+    --modal-width: 520px;              /* Modal width */
+
+    /* =============================================================================
+        BORDER RADIUS
+        ============================================================================= */
+
+    /* Border radius scale */
+    --radius-sm: 4px;   /* Small radius for inputs */
+    --radius-md: 8px;   /* Medium radius for cards */
+    --radius-lg: 12px;  /* Large radius for modals */
+    --radius-xl: 16px;  /* Extra large radius */
+    --radius-full: 50%; /* Full radius for circles */
+
+    /* =============================================================================
+        TRANSITIONS AND ANIMATIONS
+        ============================================================================= */
+
+    /* Transition durations */
+    --transition-fast: 0.15s;
+    --transition-normal: 0.3s;
+    --transition-slow: 0.5s;
+
+    /* Transition timing functions */
+    --transition-ease: ease;
+    --transition-ease-in-out: ease-in-out;
+    --transition-ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    /* Common transition combinations */
+    --transition-default: all var(--transition-normal) var(--transition-ease);
+    --transition-fast-ease: all var(--transition-fast) var(--transition-ease-out);
+    --transition-transform: transform var(--transition-normal) var(--transition-ease-out);
+
+    /* =============================================================================
+        Z-INDEX SCALE
+        ============================================================================= */
+
+    /* Z-index layering */
+    --z-dropdown: 100;
+    --z-sticky: 200;
+    --z-fixed: 300;
+    --z-modal: 400;
+    --z-popover: 500;
+    --z-tooltip: 600;
+    --z-notification: 700;
+
+    /* =============================================================================
+        BREAKPOINTS (for reference in media queries)
+        ============================================================================= */
+
+    /* Breakpoint values - use in media queries */
+    /* 
+    --breakpoint-sm: 480px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-2xl: 1536px;
+    */
+
+    /* =============================================================================
+        GALLERY/PHOTOS SPECIFIC VARIABLES
+        ============================================================================= */
+
+    /* Thumbnail sizes */
+    --thumbnail-size: 200px;
+    --thumbnail-size-mobile: 150px;
+    --thumbnail-border-width: 2px;
+    --thumbnail-border-radius: var(--radius-lg);
+
+    /* Gallery grid */
+    --gallery-gap: 20px;
+    --gallery-gap-mobile: 15px;
+}
+
 
 /* =============================================================================
    GLOBAL THEME BASE
@@ -23,6 +256,631 @@
 * {
     transition: all 0.2s ease;
 }
+
+/* =============================================================================
+   PBL OWNCLOUD THEME - LOGIN PAGE STYLES
+   core/css/login.css
+   
+   This file contains all login-related selectors from ownCloud.
+   ============================================================================= */
+
+/* =============================================================================
+   IMPORTS
+   ============================================================================= */
+
+   @import url('variables.css');
+
+   /* =============================================================================
+      LOGIN PAGE
+      ============================================================================= */
+   
+   /* Main login body */
+   #body-login {
+       background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 100%) !important;
+   }
+   
+   /* Animated purple spotlight circles */
+   #body-login::before {
+       content: '';
+       position: fixed;
+       top: 0;
+       left: 0;
+       right: 0;
+       bottom: 0;
+       background: 
+           radial-gradient(circle at 25% 25%, var(--accent-purple-20) 0%, transparent 50%),
+           radial-gradient(circle at 75% 75%, var(---accent-purple-30) 0%, transparent 50%);
+       pointer-events: none;
+       z-index: 1;
+       animation: spotlights 20s ease-in-out infinite;
+   }
+   
+   /* Spotlight animation */
+   @keyframes spotlights {
+       0%, 100% { 
+           background: 
+               radial-gradient(circle at 25% 25%, var(--accent-purple-20) 0%, transparent 50%),
+               radial-gradient(circle at 75% 75%, var(--accent-purple-10) 0%, transparent 50%);
+       }
+       25% { 
+           background: 
+               radial-gradient(circle at 60% 30%, var(--accent-purple-20) 0%, transparent 50%),
+               radial-gradient(circle at 40% 80%, var(--accent-purple-10) 0%, transparent 50%);
+       }
+       50% { 
+           background: 
+               radial-gradient(circle at 80% 20%, var(--accent-purple-20) 0%, transparent 50%),
+               radial-gradient(circle at 20% 70%, var(--accent-purple-10) 0%, transparent 50%);
+       }
+       75% { 
+           background: 
+               radial-gradient(circle at 30% 60%, var(--accent-purple-20) 0%, transparent 50%),
+               radial-gradient(circle at 70% 40%, var(--accent-purple-10) 0%, transparent 50%);
+       }
+   }
+   
+   /* Main wrapper */
+   #body-login .wrapper {
+       /* Add main wrapper styles */
+   }
+   
+   /* Spinner elements */
+   /* .float-spinner { 
+       /* Add spinner styles 
+   } */
+   
+   /* #body-login .float-spinner {
+       /* Add login-specific spinner styles
+   } */
+   
+   /* Login page text and labels */
+   #body-login p.info,
+   #body-login p.info a,
+   #body-login form legend,
+   #body-login #datadirContent label,
+   #body-login form .warning-info,
+   #body-login form input[type="checkbox"]+label {
+       color: var(--text-primary);
+   }
+   
+   /* Logo */
+   #body-login .logo {
+       background-image: url('../img/logo.svg') !important;
+       width: 140px !important;
+       height: 30px !important;
+       background-size: contain !important;
+       background-repeat: no-repeat !important;
+       background-position: center !important;
+   }
+   
+   /* #body-login form label {
+       /* Add form label styles 
+   } */
+   
+   /* Checkbox label overrides */
+   /* #body-login form .warning input[type="checkbox"]:hover+label,
+   #body-login form .warning input[type="checkbox"]:focus+label,
+   #body-login form .warning input[type="checkbox"]+label {
+       /* Add warning checkbox label styles
+   } */
+   
+   /* Update section */
+   /* #body-login .update h2 {
+       /* Add update heading styles
+   } */
+   
+   /*#body-login .update a {
+       /* Add update link styles
+   }
+   
+   /* Form groups
+   #body-login .infogroup {
+       /* Add info group styles
+   }
+   
+   /* Message images
+   #body-login p#message img {
+       /* Add message image styles
+   }
+   
+   /* Main form container 
+   #body-login form {
+       /* Add main form styles 
+   }
+   
+   /* Form fieldsets 
+   #body-login form fieldset {
+       /* Add fieldset styles 
+   }
+   
+   #body-login form #sqliteInformation {
+       /* Add SQLite info styles 
+   }
+   
+   #body-login form #adminaccount {
+       /* Add admin account styles 
+   }
+   
+   #body-login form #adminaccount legend {
+       /* Add admin account legend styles 
+   }
+   
+   /* Data directory content 
+   #body-login #datadirContent {
+       /* Add data directory styles 
+   }
+   
+   #body-login form fieldset legend,
+   #datadirContent label {
+       /* Add fieldset legend and data directory label styles 
+   }
+   
+   #body-login #datadirContent label {
+       /* Add data directory label styles 
+   }
+   
+   #body-login form #datadirField legend {
+       /* Add data directory field legend styles 
+   }
+   
+   /* Advanced options 
+   #body-login #showAdvanced {
+       /* Add advanced options styles 
+   }
+   
+   #body-login #showAdvanced img {
+       /* Add advanced options image styles 
+   }
+   
+   #body-login .icon-info-white {
+       /* Add info icon styles 
+   }
+   
+   /* Footer */
+   #body-login .footer {
+       position: fixed !important;
+       left: 0px;
+       bottom: 20px !important;
+       width: 100%;
+       color: var(--text-primary) !important;
+       font-size: 14px !important;
+       text-align: center !important;
+   }
+   
+   #body-login .footer a {
+       color: var(--accent) !important;
+       text-decoration: none !important;
+   }
+   
+   #body-login .footer a:hover {
+       color: var(--accent-dark) !important;
+       text-decoration: underline !important;
+   }
+   
+   
+   /* Strengthify wrapper 
+   #body-login .strengthify-wrapper {
+       /* Add password strength wrapper styles 
+   }
+   
+   /* Tipsy tooltips 
+   #body-login .tipsy-inner {
+       /* Add tooltip styles 
+   }
+   
+   /* Input fields */
+   #body-login input[type="text"],
+   #body-login input[type="password"],
+   #body-login input[type="email"] {
+       background-color: var(--secondary-bg) !important;
+       border: none !important;
+       border-bottom: 1px solid var(--text-primary) !important;
+       border-radius: var(--space-2);
+   }
+   
+   #body-login input[type="text"]:focus,
+   #body-login input[type="password"]:focus,
+   #body-login input[type="email"]:focus {
+       border-bottom-color: var(--accent) !important;
+       transform: translateY(-2px) !important;
+   }
+   
+   /* Input grouping 
+   .grouptop,
+   .groupmiddle,
+   .groupbottom {
+       /* Add input group styles 
+   }
+   
+   #body-login .grouptop input,
+   .grouptop input,
+   #body-login .groupmiddle input,
+   .groupmiddle input,
+   #body-login .groupbottom input,
+   .groupbottom input {
+       /* Add grouped input styles 
+   }
+   
+   /* Submit wrapper */
+   #body-login .submit-wrap {
+       display: flex;
+       justify-content: center;
+       flex-direction: column;
+       max-width: 300px;
+       margin: 32px auto 1.2rem;
+   }
+   
+   /* Loading spinner
+   .loading-spinner {
+       display: none;
+       position: relative;
+       width: 40px;
+       height: 10px;
+       margin: 0 auto;
+   }
+   
+   /* Loading spinner disable old icon 
+   .submit-wrap button#submit.icon-loading-small:after,
+   .submit-wrap button#submit.icon-loading-small span {
+       /* Add styles to disable old loading icon 
+   }
+   
+   .submit-wrap button#submit.icon-loading-small {
+       /* Add styles for submit button loading state 
+   }
+   
+   .submit-wrap .icon-loading-small .loading-spinner {
+       /* Add styles for new loading spinner 
+   }
+   
+   /* Loading spinner dots 
+   .loading-spinner div {
+       /* Add loading spinner dot styles 
+   }
+   
+   .loading-spinner div:nth-child(1) {
+       /* Add first dot styles 
+   }
+   
+   .loading-spinner div:nth-child(2) {
+       /* Add second dot styles 
+   }
+   
+   .loading-spinner div:nth-child(3) {
+       /* Add third dot styles 
+   }
+   
+   .loading-spinner div:nth-child(4) {
+       /* Add fourth dot styles 
+   }
+   
+   /* Loading spinner animations - you can add keyframes here 
+   @keyframes loading-spinner1 {
+       /* Add first spinner animation 
+   }
+   
+   @keyframes loading-spinner3 {
+       /* Add third spinner animation 
+   }
+   
+   @keyframes loading-spinner2 {
+       /* Add second spinner animation 
+   }
+   
+   /* Checkbox labels */
+   #body-login form input[type="checkbox"]+label {
+       position: relative;
+       margin: 0;
+       padding: 14px;
+       padding-left: 28px;
+       vertical-align: middle;
+       -webkit-user-select: none;
+       -moz-user-select: none;
+       -ms-user-select: none;
+       user-select: none;
+   }
+   
+   /* Error and success messages 
+   #body-login form .errors {
+       /* Add error message styles 
+   }
+   
+   #body-login .success {
+       /* Add success message styles 
+   }
+   
+   /* Advanced button 
+   #body-login #showAdvanced > img {
+       /* Add advanced button image styles 
+   }
+   
+   #body-login p.info a,
+   #body-login #showAdvanced {
+       /* Add info links and advanced button styles 
+   }
+   
+   /* Hover states 
+   #body-login #remember_login:hover+label,
+   #body-login #remember_login:focus+label,
+   #body-login p.info a:hover,
+   #body-login p.info a:focus {
+       /* Add hover/focus states 
+   }
+   
+   /* Password toggle buttons 
+   #showadminpass,
+   #showdbpass {
+       /* Add password toggle position styles 
+   }
+   
+   #showadminpass,
+   #showdbpass,
+   #personal-show {
+       /* Add password toggle visibility styles 
+   }
+   
+   #showadminpass + label,
+   #showdbpass + label {
+       /* Add password toggle label styles 
+   }
+   
+   #showadminpass:checked + label,
+   #showdbpass:checked + label,
+   #personal-show:checked + label {
+       /* Add checked password toggle styles 
+   }
+   
+   #showadminpass + label,
+   #showdbpass + label,
+   #personal-show + label {
+       /* Add password toggle label positioning 
+   }
+   
+   #showadminpass + label:before,
+   #showdbpass + label:before,
+   #personal-show + label:before {
+       /* Add password toggle label before element 
+   }
+   
+   #pass2,
+   input[name="personal-password-clone"] {
+       /* Add password confirmation field styles 
+   }
+   
+   #personal-show + label {
+       /* Add personal password toggle styles 
+   }
+   
+   #passwordbutton {
+       /* Add password button styles 
+   }
+   
+   /* Database selector 
+   #databaseBackend legend {
+       /* Add database backend legend styles 
+   }
+   
+   #body-login form #selectDbType {
+       /* Add database type selector styles 
+   }
+   
+   #body-login form #selectDbType .info {
+       /* Add database type info styles 
+   }
+   
+   #body-login form #selectDbType label {
+       /* Add database type label styles 
+   }
+   
+   #body-login form #selectDbType label span {
+       /* Add database type label span styles 
+   }
+   
+   #body-login form #selectDbType label {
+       /* Add database type label background 
+   }
+   
+   #body-login form #selectDbType label.ui-state-hover,
+   #body-login form #selectDbType label.ui-state-active {
+       /* Add database type hover/active states 
+   }
+   
+   /* Warning and error messages */
+   #body-login .warning,
+   #body-login .update,
+   #body-login .error {
+       /* Add warning/error message styles */
+   }
+   
+   /* #body-login .update {
+       /* Add update message styles 
+   }
+   
+   #body-login .update .appList {
+       /* Add update app list styles 
+   }
+   
+   #body-login .update img.float-spinner {
+       /* Add update spinner styles 
+   }
+   
+   /* User/settings warnings 
+   #body-user .warning,
+   #body-settings .warning {
+       /* Add user/settings warning styles 
+   }
+   
+   /* Warning/error text styles 
+   .warning legend,
+   .warning a,
+   .error a {
+       /* Add warning/error link styles 
+   }
+   
+   .error a.button {
+       /* Add error button styles 
+   }
+   
+   .error pre {
+       /* Add error preformatted text styles 
+   }
+   
+   .error-wide .button {
+       /* Add wide error button styles 
+   }
+   
+   .warning-input {
+       /* Add warning input border styles 
+   }
+   
+   /* Login page specific warnings 
+   #body-login .warning {
+       /* Add login warning styles 
+   }
+   
+   #body-login .warning legend {
+       /* Add login warning legend styles 
+   }
+   
+   #body-login a.warning {
+       /* Add login warning link styles 
+   }
+   
+   /* Update page errors 
+   #body-login .updateProgress .error {
+       /* Add update progress error styles 
+   }
+   
+   /* Alternative logins 
+   form#alternative-logins {
+       /* Add alternative logins form styles 
+   }
+   
+   #alternative-logins ul {
+       /* Add alternative logins list styles 
+   }
+   
+   #alternative-logins legend {
+       /* Add alternative logins legend styles 
+   }
+   
+   #alternative-logins li {
+       /* Add alternative login item styles 
+   }
+   
+   #alternative-logins li:first-child {
+       /* Add first alternative login item styles 
+   }
+   
+   /* Submit buttons and alternative login buttons 
+   #alternative-logins li a.button,
+   html #body-login input[type="submit"],
+   html #body-login button[type="submit"] {
+       /* Add button styles 
+   }
+   
+   #alternative-logins li a.button span,
+   html #body-login input[type="submit"] span,
+   html #body-login button[type="submit"] span {
+       /* Add button span styles 
+   }
+   
+   #alternative-logins li a.button:hover,
+   html #body-login input[type="submit"]:hover,
+   html #body-login button[type="submit"]:hover {
+       /* Add button hover styles 
+   }
+   
+   /* Input field sizing */
+   #body-login input {
+       /* Add input field sizing styles */
+   }
+   
+   /* Input placeholders */
+   #body-login input::placeholder {
+       color: #bebebe !important;
+       font-size: 16px !important;
+   }
+   
+   /* Remember login 
+   #remember_login {
+       /* Add remember login checkbox styles 
+   }
+   
+   #body-login .remember-login-container {
+       /* Add remember login container styles 
+   }
+   
+   /* Vertical alignment container */
+   #body-login .v-align {
+       /* Add vertical alignment styles */
+   }
+   
+   #body-login.has-theme .v-align {
+       /* Add themed vertical alignment styles */
+   }
+   
+   
+   
+   /* Tablet and desktop wrapper 
+   @media all and (min-width: 600px) {
+       #body-login .wrapper {
+           /* Add responsive wrapper styles for larger screens 
+       }
+   }
+   
+   /* IE11 specific fixes 
+   @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+       #body-login .wrapper {
+           /* Add IE11 specific wrapper styles 
+       }
+   }
+   
+   /* Update details link 
+   #body-login .update a.update-show-detailed {
+       /* Add update details link styles 
+   }
+   
+   /* Hidden warnings 
+   #body-login .warning.hidden {
+       /* Add hidden warning styles 
+   }
+   
+   /* =============================================================================
+      PUBLIC SHARE PAGES
+      ============================================================================= */
+   
+   /* Public share page styles 
+   #body-public {
+       /* Add public share page background styles 
+   }
+   
+   #body-public .directLink {
+       /* Add public share direct link styles 
+   }
+   
+   #body-public input[type="password"] {
+       /* Add public share password input styles 
+   }
+   
+   #body-public .warning {
+       /* Add public share warning styles 
+   }
+   
+   #body-public .footer {
+       /* Add public share footer styles 
+   }
+   
+   /* Mobile styles 
+   @media only screen and (max-width: 768px) {
+       #body-login #header {
+           /* Add mobile header styles 
+       }
+       
+       #body-login .wrapper {
+           /* Add mobile wrapper styles with all vendor prefixes 
+       }
+   } */
 
 /* =============================================================================
    HEADER
