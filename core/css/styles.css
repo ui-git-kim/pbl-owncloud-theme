@@ -521,16 +521,13 @@
     transform: translateY(-2px) !important;
 }
 
-/* Input grouping */
+/* Input grouping 
 .grouptop,
 .groupmiddle,
 .groupbottom {
-    background-color: var(--secondary-bg) !important;
-    border: none !important;
-    border-bottom: 1px solid var(--text-primary) !important;
-    border-radius: var(--space-2);
+    /* Add input group styles 
 }
-
+*/
 #body-login .grouptop input,
 .grouptop input,
 #body-login .groupmiddle input,
@@ -833,9 +830,12 @@ html #body-login button[type="submit"]:hover {
     /* Add button hover styles 
 }
 
-/* Input field sizing
+/* Input field sizing */
 #body-login input {
-    /* Add input field sizing styles
+    background-color: var(--secondary-bg) !important;
+    border: none !important;
+    border-bottom: 1px solid var(--text-primary) !important;
+    border-radius: var(--space-2);
 }
 
 /* Input placeholders */
