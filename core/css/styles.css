@@ -11,17 +11,6 @@
    Import this file first in all other CSS files to use these variables.
    ============================================================================= */
 
-   /* =============================================================================
-   FONT IMPORTS
-   Must be at the very top before any other CSS rules
-   ============================================================================= */
-
-/* Primary font: Josefin Sans */
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
-
-/* Alternative font: Inter */
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
 :root {
     /* =============================================================================
     BRAND COLORS
