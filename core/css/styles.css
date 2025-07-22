@@ -830,7 +830,7 @@ html #body-login button[type="submit"]:hover {
     /* Add button hover styles 
 }
 
-/* Input field sizing */
+/* Input field sizing
 #body-login input {
     background-color: var(--secondary-bg) !important;
     border: none !important;
@@ -1180,26 +1180,25 @@ table a:hover {
 }
 
 /* Buttons General Styling */
-.button,
+button, .button,
 input[type="submit"],
 input[type="button"],
 button {
-    background-color: var(--secondary-bg) !important;
-    border: 1px solid var(--border-color-secondary) !important;
-    color: var(--text-primary) !important;
+    background-color: var(--accent) !important;
+    border: 1px solid var(--accent) !important;
+    color: var(--text-on-accent) !important;
     border-radius: 6px;
-    padding: 8px 16px;
     font-family: inherit;
     cursor: pointer;
 }
 
-.button:hover,
+button, .button:hover,
 input[type="submit"]:hover,
 input[type="button"]:hover,
 button:hover {
-    background-color: var(--hover-bg) !important;
-    border-color: var(--accent) !important;
-    color: var(--accent-dark) !important;
+    background-color: var(--accent-dark) !important;
+    border-color: var(--accent-dark) !important;
+    color: var(--text-on-accent) !important;
 }
 
 /* Primary buttons */
@@ -1251,31 +1250,46 @@ button:hover {
 /* Input fields */
 input[type="text"],
 input[type="password"],
-input[type="email"],
 input[type="search"],
 input[type="number"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="time"],
+input[type="date"],
 textarea,
-select {
+select,
+#quota,
+.pager li a {
     background-color: var(--input-bg) !important;
     border: none !important;
     border-bottom: 1px solid var(--text-primary) !important;
     color: var(--text-secondary) !important;
-    border-radius: 5px;
-    padding: 15px 20px;
-    font-family: inherit;
+}
+input[type="text"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="time"],
+textarea {
+	background: var(--input-bg) !important;
+	color: var(--text-secondary) !important;
 }
 
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="email"]:focus,
-input[type="search"]:focus,
-input[type="number"]:focus,
-textarea:focus,
-select:focus {
+input[type="text"]:hover, input[type="text"]:focus, input[type="text"]:active,
+input[type="password"]:hover, input[type="password"]:focus, input[type="password"]:active,
+input[type="number"]:hover, input[type="number"]:focus, input[type="number"]:active,
+input[type="search"]:hover, input[type="search"]:focus, input[type="search"]:active,
+input[type="email"]:hover, input[type="email"]:focus, input[type="email"]:active,
+input[type="tel"]:hover, input[type="tel"]:focus, input[type="tel"]:active,
+input[type="url"]:hover, input[type="url"]:focus, input[type="url"]:active,
+input[type="time"]:hover, input[type="time"]:focus, input[type="time"]:active,
+textarea:hover, textarea:focus, textarea:active {
     border-bottom-color: var(--accent) !important;
     box-shadow: 0 0 0 3px rgba(156, 86, 157, 0.2) !important;
-    outline: none !important;
-    background-color: var(--secondary-bg) !important;
 }
 
 /* Input placeholders */
