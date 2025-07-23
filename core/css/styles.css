@@ -232,6 +232,113 @@
 }
 
 /* =============================================================================
+   CORE SELECTORS
+   ============================================================================= */
+
+body {
+	background-color:var(--primary-bg);
+	color: var(--text-primary);
+}
+
+a {
+    color: var(--text-primary);
+}
+
+#nojavascript {
+	background-color: var(--shadow-color);
+}
+
+#nojavascript a:hover,
+#nojavascript a:focus {
+	color: var(--accent);
+}
+
+/* =============================================================================
+   CONTENT
+   ============================================================================= */
+/* Searchbox */
+
+.searchbox input[type="search"]:focus,
+.searchbox input[type="search"]:active,
+.searchbox input[type="search"]:valid {
+	background-color: var(--secondary-bg);
+}
+
+#controls {
+	background-color: var(--secondary-bg);
+}
+
+#emptycontent,
+.emptycontent {
+	color: var(--text-muted);
+}
+
+tbody tr:hover,
+tbody tr:focus,
+tbody tr:active {
+	background-color: var(--secondary-bg);
+}
+
+#quota div {
+	background-color: var(--seconday-bg);
+}
+
+#quota div.quota-warning {
+	background-color: var(--warning-color);
+}
+
+.separator { 
+    border-left:1px solid var(--border-color-secondary); 
+    border-right:1px solid var(--border-color-secondary);
+}
+
+a.bookmarklet { 
+    background-color:#ddd; 
+    border:1px solid var(--border-color-primary);
+}
+
+.exception {
+    color: var(--text-primary);
+}
+
+.exception textarea {
+    background:var(--seconday-bg);
+}
+
+.ui-datepicker-prev,.ui-datepicker-next {
+    border:1px solid var(--border-color-secondary); 
+    background: var(--secondary-bg); 
+}
+
+.section {
+	color: var(--text-primary);
+}
+
+.tabHeader:hover{
+	border-bottom: 2px solid var(--accent);
+	color: var(--text-secondary);
+}
+
+.tabHeader.selected{
+	border-bottom: 2px solid var(--accent-dark);
+	color: var(--text-secondary);
+}
+
+.subTabHeaders > .subTabHeader {
+	color: var(--text-primary);
+	background-color: var(--secondary-bg);
+}
+
+.subTabHeaders > .subTabHeader.selected {
+	border-bottom: 1px solid var(--border-color-secondary);
+	color: var(--text-primary);
+}
+
+.popovermenu .menuitem {
+	color: var(--text-primary);
+}
+
+/* =============================================================================
    HEADER
    ============================================================================= */
 
@@ -248,60 +355,33 @@
 /* Header logo */
 #header .logo {
     background-image: url('../img/logo.svg') !important;
-    width: 560px !important;
-    height: 120px !important;
-    background-size: contain !important;
-    background-repeat: no-repeat !important;
-    background-position: center !important;
-    filter: brightness(1.2);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center center;
+	width: 252px;
+	height: 142px;
+	margin: 0 auto;
 }
 
 #header .logo-icon {
-    background-image: url('../img/logo-icon.svg') !important;
-    height: 34px !important;
-    width: 62px !important;
-    background-size: contain !important;
-    background-repeat: no-repeat !important;
-    background-position: center !important;
-    filter: brightness(1.2);
+    display: inline-block;
+	background-image: url(../img/logo-icon.svg);
+	background-repeat: no-repeat;
+	background-size: 61px 34px;
+	height: 34px;
+	color: #fff;
+	margin: 0;
+	padding: 0;
+	padding-left: 66px;
+	font-size: 1.04rem;
+	font-weight: 300;
+	line-height: inherit;
 }
 
-/* Header text and controls */
-#header .menutoggle,
-#header .header-right a,
-#header .settings .expand {
-    color: var(--text-secondary) !important;
+.header-appname {
+	display: hidden;
 }
 
-#header .menutoggle:hover,
-#header .header-right a:hover {
-    color: var(--accent-dark) !important;
-    background-color: var(--hover-bg) !important;
-    border-radius: 6px;
-}
-
-/* Header search */
-#header .searchbox input {
-    background-color: var(--input-bg) !important;
-    border: 1px solid var(--border-color-secondary) !important;
-    color: var(--text-secondary) !important; /* Changed from text-primary for better contrast */
-    border-radius: 20px;
-}
-
-#header .searchbox input:focus {
-    background-color: var(--secondary-bg) !important; /* Added missing background change */
-    border-color: var(--accent) !important;
-    box-shadow: 0 0 0 3px rgba(156, 86, 157, 0.2) !important; /* Added missing !important */
-}
-
-/* Header search placeholder */
-#header .searchbox input::placeholder {
-    color: var(--text-muted) !important; /* Added for better placeholder visibility */
-}
-
-#header .header-right .icon-caret-dark {
-    color: var(--text-secondary) !important;
-}
 
 
 /* =============================================================================
@@ -405,8 +485,8 @@
     /* Add update heading styles
 } */
 
-/*#body-login .update a {
-    /* Add update link styles
+#body-login .update a {
+	border-bottom: 1px solid var(--border-color-secondary);
 }
 
 /* Form groups
@@ -528,7 +608,7 @@
     /* Add input group styles 
 }
 */
-#body-login .grouptop input,
+/*#body-login .grouptop input,
 .grouptop input,
 #body-login .groupmiddle input,
 .groupmiddle input,
@@ -619,13 +699,15 @@
     user-select: none;
 }
 
-/* Error and success messages 
+/* Error and success messages */ 
 #body-login form .errors {
-    /* Add error message styles 
+    background: var(--error-bg); 
+    border:1px solid var(--error-color);
 }
 
 #body-login .success {
-    /* Add success message styles 
+    background: var(--success-bg); 
+    border:1px solid var(--success-color);
 }
 
 /* Advanced button 
@@ -743,10 +825,10 @@ input[name="personal-password-clone"] {
     /* Add update spinner styles 
 }
 
-/* User/settings warnings 
+/* User/settings warnings */
 #body-user .warning,
 #body-settings .warning {
-    /* Add user/settings warning styles 
+    background: var(--warning-bg);
 }
 
 /* Warning/error text styles 
@@ -754,22 +836,22 @@ input[name="personal-password-clone"] {
 .warning a,
 .error a {
     /* Add warning/error link styles 
-}
+}*/
 
 .error a.button {
-    /* Add error button styles 
+    color: var(--text-muted) !important;
 }
 
-.error pre {
+/* .error pre {
     /* Add error preformatted text styles 
 }
 
 .error-wide .button {
     /* Add wide error button styles 
-}
+}*/
 
 .warning-input {
-    /* Add warning input border styles 
+    border-color: var(--warning-color) !important;
 }
 
 /* Login page specific warnings 
@@ -939,15 +1021,95 @@ html #body-login button[type="submit"]:hover {
 /* Left sidebar navigation */
 .app-navigation {
     background-color: var(--secondary-bg);
-    border-right: 2px solid var(--border-color);
+    border-right: 1px solid var(--border-color-secondary);
 }
 
 /* Navigation items */
-.app-navigation li a {
+.app-navigation li > a {
     color: var(--text-secondary);
-    border-bottom: 1px solid var(--border-color);
-    transition: all 0.3s ease;
-    padding: 12px 20px;
+}
+
+#app-navigation .active {
+	background-color: var(--accent-purple-20);
+}
+
+#app-navigation li.divider {
+	color: var(--text-primary);
+	background-color: var(--secondary-bg);
+	border-bottom: 1px solid var(--border-color-secondary);
+}
+
+#app-navigation .collapsible.open {
+	background-image: linear-gradient(top, var(--secondary-bg) 0%, var(--primary-bg) 100%);
+	background-image: -webkit-linear-gradient(top, var(--secondary-bg) 0%, var(--primary-bg) 100%);
+	background-image: -ms-linear-gradient(top, var(--secondary-bg) 0%, rvar(--primary-bg) 100%);
+}
+
+#app-navigation .error {
+	color: var(--error-color);
+}
+
+#app-navigation .app-navigation-separator {
+	border-bottom: 1px solid var(--border-color-secondary);
+}
+
+/* menu bubble / popover */
+.bubble,
+#app-navigation .app-navigation-entry-menu {
+	background-color: var(--seconday-bg);
+	color: var(--text-primary);
+	-webkit-filter: drop-shadow(0 0 5px var(--shadow-heavy));
+	-moz-filter: drop-shadow(0 0 5px var(--shadow-heavy));
+	-ms-filter: drop-shadow(0 0 5px var(--shadow-heavy));
+	-o-filter: drop-shadow(0 0 5px var(--shadow-heavy));
+	filter: drop-shadow(0 0 5px var(--shadow-heavy));
+}
+
+.ie .bubble,
+.ie #app-navigation .app-navigation-entry-menu,
+.ie .bubble:after,
+.ie #app-navigation .app-navigation-entry-menu:after,
+.edge .bubble,
+.edge #app-navigation .app-navigation-entry-menu,
+.edge .bubble:after,
+.edge #app-navigation .app-navigation-entry-menu:after {
+	border: 1px solid var(--border-color-primary);
+}
+
+.bubble:after,
+#app-navigation .app-navigation-entry-menu:after {
+	border-color: var(--border-color-secondary);
+}
+
+#app-navigation .app-navigation-entry-edit input {
+    border: 1px solid var(--border-color-secondary);
+}
+
+/* Secondary Sidebar */
+#app-sidebar {
+	background: var(--secondary-background);
+	border-left: 1px solid var(--border-color-secondary);
+}
+
+#app-settings-content {
+	background-color: var(--primary-background);
+}
+
+#app-settings-content,
+#app-settings-header {
+	border-right: 1px solid var(--border-color-primary);
+}
+
+.settings-button {
+	background-color: var(--secondary-bg);
+}
+.settings-button:hover,
+.settings-button:focus {
+	background-color: var(--accent-dark);
+}
+.settings-button.opened:hover,
+.settings-button.opened:focus {
+	background-color: var(--accent);
 }
 
 .app-navigation li a:hover {
@@ -982,7 +1144,7 @@ html #body-login button[type="submit"]:hover {
     opacity: 1 !important;
 }
 
-/* Secondary Sidebar */
+
 #app-sidebar {
     background-color: var(--secondary-bg) !important;
     border-left: 1px solid var(--border-color-secondary) !important;
@@ -1000,35 +1162,17 @@ html #body-login button[type="submit"]:hover {
     color: var(--text-primary) !important;
 }
 
-/* =============================================================================
-   CONTENT AREA 
-   ============================================================================= */
 
-/* Main content background */
-#app-content {
-    background-color: var(--primary-bg) !important;
-    color: var(--text-primary) !important;
-}
-
-#app-content-wrapper {
-    background-color: var(--primary-bg) !important;
-}
-
-/* Content header */
-.app-content-header {
-    background-color: var(--secondary-bg) !important;
-    border-bottom: 1px solid var(--border-color-secondary) !important;
-    color: var(--text-primary) !important;
-}
-
-#app-content.with-app-sidebar {
-    background-color: var(--primary-bg) !important;
-}
 
 /* =============================================================================
    BREADCRUMB NAVIGATION
    ============================================================================= */
-.breadcrumb,
+
+div.crumb span {
+	color: var(--text-primary);
+}
+
+   .breadcrumb,
 #controls .breadcrumb,
 .controls .breadcrumb {
     background-color: var(--secondary-bg) !important;
@@ -1389,7 +1533,21 @@ textarea::placeholder {
     box-shadow: 0 0 0 3px rgba(156, 86, 157, 0.2) !important;
     outline: none !important;
     background-color: var(--secondary-bg) !important;
+}*/
+
+#oc-dialog-filepicker-content .filelist {
+	background-color:var(--secondary-bg);
 }
+
+#tagsdialog .scrollarea {
+	border:1px solid var(--border-primary);
+}
+
+#tagsdialog .taglist li { 
+    background: var(--secondary-bg); 
+}
+
+#tagsdialog .taglist li:hover, #tagsdialog .taglist li:active { background:var(--accent-dark); }
 
 /* Modal labels */
 .oc-dialog label {
@@ -1866,7 +2024,12 @@ input[type="radio"]:checked::after {
 /* =============================================================================
    NOTIFICATIONS AND MESSAGES
    ============================================================================= */
-.msg {
+
+#notification {
+    background-color: var(--accent-light);
+}
+
+   .msg {
     border-radius: 8px;
     padding: 12px 16px;
     margin: 10px 0;
@@ -1914,7 +2077,7 @@ input[type="radio"]:checked::after {
    SCROLLBARS
    ============================================================================= */
 ::-webkit-scrollbar {
-    width: 12px;
+    width: 8px;
     background-color: var(--secondary-bg);
 }
 
