@@ -627,11 +627,11 @@ html #body-login button[type="submit"]:hover {
 }
 
 /* Navigation items */
-
 #app-navigation,
-.nav-trashbin {
-	background-color: var(--secondary-bg);
-	border-right: 1px solid var(--border-color-secondary);
+.nav-trashbin, 
+.settings-button {
+	background-color: var(--primary-bg);
+	border-right: none;
 }
 
 #app-navigation li > a {
@@ -698,8 +698,7 @@ html #body-login button[type="submit"]:hover {
     border: 1px solid var(--border-color-secondary);
 }
 
-#app-settings-content,
-.settings-button {
+#app-settings-content {
 	background-color: var(--primary-background);
 }
 
@@ -708,16 +707,27 @@ html #body-login button[type="submit"]:hover {
 	border-right: 1px solid var(--border-color-primary);
 }
 
-.settings-button {
-	background-color: var(--secondary-bg);
-}
-.settings-button:hover,
-.settings-button:focus {
-	background-color: var(--accent-dark);
-}
 .settings-button.opened:hover,
 .settings-button.opened:focus {
 	background-color: var(--accent);
+}
+
+/* Secondary Sidebar */
+#app-sidebar {
+    background-color: var(--secondary-bg) !important;
+    border-left: 1px solid var(--border-color-secondary) !important;
+    color: var(--text-primary) !important;
+}
+
+#app-sidebar .sidebar-header {
+    background-color: var(--secondary-bg) !important;
+    border-bottom: 1px solid var(--border-color-secondary) !important;
+    color: var(--text-primary) !important;
+}
+
+#app-sidebar .sidebar-content {
+    background-color: var(--secondary-bg) !important;
+    color: var(--text-primary) !important;
 }
 
 /* =============================================================================
@@ -1269,7 +1279,8 @@ div.multiselect.active {
 #filestable thead tr,
 #filestable thead tr th,
 #filestable tbody tr {
-    background-color: var(--primary-bg);
+    color: var(--text-primary);
+    background-color: var(--secondary-bg);
 }
 
 #filestable tbody tr:hover,
@@ -1289,11 +1300,12 @@ table tr.mouseOver td {
 
 #fileList .popovermenu .action,
 table th, table th a {
-	color: #4c4;
+	color: var(--text-secondary);
 }
 
 #filelist {
-    background-color: var(--primary-bg);
+    background-color: var(--secondary-bg);
+    border-bottom: 1px solid var(--border-color-secondary);
 }
 
 .filepicker_element_selected { 
