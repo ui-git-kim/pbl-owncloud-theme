@@ -338,6 +338,24 @@ a.bookmarklet {
 	color: var(--text-primary);
 }
 
+/* Icons */
+
+.loading:after,
+.loading-small:after,
+.icon-loading:after,
+.icon-loading-dark:after,
+.icon-loading-small:after,
+.icon-loading-small-dark:after {
+	border: 1px solid var(--accent-purple-10);
+	border-top-color: var(--border-color-secondary);
+}
+
+.icon-loading-dark:after,
+.icon-loading-small-dark:after {
+	border: 1px solid var(--accent-purple-20);
+	border-top-color: var(--border-color-primary);
+}
+
 /* =============================================================================
    HEADER
    ============================================================================= */
@@ -382,7 +400,21 @@ a.bookmarklet {
 	display: hidden;
 }
 
+#expand {
+	color: var(--text-secondary);
+}
 
+#expanddiv {
+	background-color: var(--primary-bg);
+}
+
+#expanddiv a {
+	color: var(--text-primary);
+}
+
+#expanddiv a:hover {
+	background: var(--accent-purple-30);
+}
 
 /* =============================================================================
    LOGIN PAGE
@@ -1018,7 +1050,24 @@ html #body-login button[type="submit"]:hover {
    NAVIGATION 
    ============================================================================= */
 
-/* Left sidebar navigation */
+#navigation {
+	background-color: var(--primary-bg);
+}
+
+/* arrow look */
+#expanddiv:after {
+	border-color: var(--border-color-secondary);
+	border-bottom-color: var(--border-color-primary);
+}
+
+#navigation a:hover {
+	background: var(--accent-purple-30);
+}
+
+#navigation a span {
+	color: var(--secondary-bg);
+}
+
 .app-navigation {
     background-color: var(--secondary-bg);
     border-right: 1px solid var(--border-color-secondary);
@@ -1112,56 +1161,6 @@ html #body-login button[type="submit"]:hover {
 	background-color: var(--accent);
 }
 
-.app-navigation li a:hover {
-    background-color: var(--hover-bg);
-    color: var(--text-primary);
-    border-radius: 8px;
-    margin: 2px 8px;
-    border-left: 4px solid var(--accent);
-}
-
-/* Active navigation item */
-.app-navigation li a.active {
-    background-color: var(--accent);
-    color: var(--text-secondary);
-    border-radius: 8px;
-    margin: 2px 8px;
-    font-weight: 600;
-    border-left: 4px solid var(--accent-light);
-}
-
-/* Navigation icons */
-#app-navigation .icon,
-#app-navigation .app-navigation-entry-icon {
-    opacity: 0.7 !important;
-    filter: brightness(1.2) !important;
-}
-
-#app-navigation li a:hover .icon,
-#app-navigation li a:hover .app-navigation-entry-icon,
-#app-navigation li.active .icon,
-#app-navigation li.active .app-navigation-entry-icon {
-    opacity: 1 !important;
-}
-
-
-#app-sidebar {
-    background-color: var(--secondary-bg) !important;
-    border-left: 1px solid var(--border-color-secondary) !important;
-    color: var(--text-primary) !important;
-}
-
-#app-sidebar .sidebar-header {
-    background-color: var(--secondary-bg) !important;
-    border-bottom: 1px solid var(--border-color-secondary) !important;
-    color: var(--text-primary) !important;
-}
-
-#app-sidebar .sidebar-content {
-    background-color: var(--secondary-bg) !important;
-    color: var(--text-primary) !important;
-}
-
 
 
 /* =============================================================================
@@ -1172,64 +1171,11 @@ div.crumb span {
 	color: var(--text-primary);
 }
 
-   .breadcrumb,
-#controls .breadcrumb,
-.controls .breadcrumb {
-    background-color: var(--secondary-bg) !important;
-    border-bottom: 1px solid var(--border-color-secondary) !important;
-    padding: 15px 20px !important;
-    margin: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-    font-size: 14px !important;
-}
-
-.breadcrumb a,
-#controls .breadcrumb a,
-.controls .breadcrumb a {
-    color: var(--text-primary) !important;
-    text-decoration: none !important;
-    padding: 4px 8px !important;
-    border-radius: 4px !important;
-    transition: all 0.2s ease !important;
-}
-
-.breadcrumb a:hover,
-#controls .breadcrumb a:hover,
-.controls .breadcrumb a:hover {
-    color: var(--accent-dark) !important;
-    background-color: var(--hover-bg) !important;
-}
-
-.breadcrumb .crumb,
-#controls .breadcrumb .crumb,
-.controls .breadcrumb .crumb {
-    color: var(--text-primary) !important;
-    padding: 4px 8px !important;
-}
-
-/* Breadcrumb separators */
-.breadcrumb .crumb:not(:last-child)::after,
-#controls .breadcrumb .crumb:not(:last-child)::after,
-.controls .breadcrumb .crumb:not(:last-child)::after {
-    content: "›" !important;
-    color: var(--text-muted) !important;
-    margin: 0 4px !important;
-    font-size: 16px !important;
-}
-
-/* Breadcrumb home icon */
-.breadcrumb .icon-home,
-#controls .breadcrumb .icon-home,
-.controls .breadcrumb .icon-home {
-    opacity: 0.8 !important;
-    filter: brightness(1.2) !important;
-}
-
-.breadcrumb .icon-home:hover,
-#controls .breadcrumb .icon-home:hover,
-.controls .breadcrumb .icon-home:hover {
-    opacity: 1 !important;
+div.crumb:hover,
+div.crumb:focus,
+div.crumb a:focus,
+div.crumb:active {
+	color: var(--accent)
 }
 
 /* =============================================================================
@@ -1309,96 +1255,9 @@ table a:hover {
 }
 
 /* =============================================================================
-   CONTROLS 
+   INPUTS
    ============================================================================= */
 
-#controls {
-    background-color: var(--secondary-bg) !important;
-    border-bottom: 1px solid var(--border-color-secondary) !important;
-    color: var(--text-primary) !important;
-    padding: 15px 20px !important;
-}
-
-.actions {
-    background-color: transparent !important;
-}
-
-/* Buttons General Styling */
-button, .button,
-input[type="submit"],
-input[type="button"],
-button {
-    background-color: var(--accent) !important;
-    border: 1px solid var(--accent) !important;
-    color: var(--text-on-accent) !important;
-    border-radius: 6px;
-    font-family: inherit;
-    cursor: pointer;
-}
-
-button, .button:hover,
-input[type="submit"]:hover,
-input[type="button"]:hover,
-button:hover {
-    background-color: var(--accent-dark) !important;
-    border-color: var(--accent-dark) !important;
-    color: var(--text-on-accent) !important;
-}
-
-/* Primary buttons */
-.primary,
-input[type="submit"].primary,
-input[type="button"].primary,
-button.primary {
-    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%) !important;
-    color: var(--text-secondary) !important;
-    border: none !important;
-    font-weight: 600;
-}
-
-.primary:hover,
-input[type="submit"].primary:hover,
-input[type="button"].primary:hover,
-button.primary:hover {
-    background: linear-gradient(135deg, var(--accent-dark) 0%, var(--accent) 100%) !important;
-    transform: translateY(-1px);
-    box-shadow: 0 5px 15px rgba(156, 86, 157, 0.3);
-}
-
-/* Secondary buttons */
-.button,
-input[type="submit"],
-input[type="button"],
-button {
-    background-color: var(--secondary-bg);
-    border: 2px solid var(--border-color-secondary);
-    color: var(--text-primary);
-    border-radius: 10px;
-    padding: 10px 20px;
-    transition: all 0.3s ease;
-}
-
-.button:hover,
-input[type="submit"]:hover,
-input[type="button"]:hover,
-button:hover {
-    background-color: var(--hover-bg);
-    border-color: var(--accent);
-    color: var(--accent-dark);
-}
-
-/* =============================================================================
-   FORM ELEMENTS
-   ============================================================================= */
-
-input#user, input#password {
-    background-color: var(--input-bg) !important;
-    border: none !important;
-    border-bottom: 1px solid var(--text-primary) !important;
-    color: var(--text-secondary) !important;
-}
-
-/* Input fields */
 input[type="text"],
 input[type="password"],
 input[type="search"],
@@ -1410,12 +1269,17 @@ input[type="time"],
 input[type="date"],
 textarea,
 select,
+button, .button,
+input[type="submit"],
+input[type="button"],
 #quota,
 .pager li a {
-    background-color: var(--input-bg) !important;
+    background-color: var(--input-bg);
+    color: var(--text-primary);
     border: none !important;
-    border-bottom: 1px solid var(--text-primary) !important;
-    color: var(--text-secondary) !important;
+    border-bottom: 1px solid var(--text-primary);
+    outline: none;
+    border-radius: 3px;
 }
 input[type="text"],
 input[type="password"],
@@ -1442,6 +1306,37 @@ textarea:hover, textarea:focus, textarea:active {
     background: var(--input-bg) !important;
     border-bottom-color: var(--accent) !important;
     box-shadow: 0 0 0 3px rgba(156, 86, 157, 0.2) !important;
+}
+
+select {
+	background: url('../../core/img/actions/triangle-s.svg') no-repeat right 8px center var(--secondary-bg);
+}
+
+select:hover {
+	background-color: var(--accent-purple-10);
+}
+
+.select2-choices {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	color: #333;
+	background-image: none;
+}
+.select2-dropdown-open .select2-choices {
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	border: 1px solid #3875d7;
+}
+
+/* =============================================================================
+   FORM ELEMENTS
+   ============================================================================= */
+
+input#user, input#password {
+    background-color: var(--input-bg) !important;
+    border: none !important;
+    border-bottom: 1px solid var(--text-primary) !important;
+    color: var(--text-secondary) !important;
 }
 
 /* Input placeholders */
