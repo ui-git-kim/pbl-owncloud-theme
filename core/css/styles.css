@@ -227,6 +227,11 @@ a {
 	color: var(--accent);
 }
 
+/* SVG */
+.svg {
+	fill: var(--text-primary);
+}
+
 /* =============================================================================
    HEADER
    ============================================================================= */
@@ -623,7 +628,8 @@ html #body-login button[type="submit"]:hover {
 
 /* Navigation items */
 
-#app-navigation {
+#app-navigation,
+.nav-trashbin {
 	background-color: var(--secondary-bg);
 	border-right: 1px solid var(--border-color-secondary);
 }
@@ -632,7 +638,11 @@ html #body-login button[type="submit"]:hover {
     color: var(--text-secondary);
 }
 
-#app-navigation .active {
+#app-navigation li:active,
+#app-navigation li:hover,
+#app-navigation li:focus,
+.settings-button:hover,
+.settings-button:focus {
 	background-color: var(--accent-purple-20);
 }
 
@@ -688,13 +698,8 @@ html #body-login button[type="submit"]:hover {
     border: 1px solid var(--border-color-secondary);
 }
 
-/* Secondary Sidebar */
-#app-sidebar {
-	background: var(--secondary-background);
-	border-left: 1px solid var(--border-color-secondary);
-}
-
-#app-settings-content {
+#app-settings-content,
+.settings-button {
 	background-color: var(--primary-background);
 }
 
@@ -1254,6 +1259,49 @@ div.multiselect.active {
 #tagsdialog .taglist li:hover, 
 #tagsdialog .taglist li:active { 
     background: var(--accent-dark); 
+}
+
+/* =============================================================================
+   FILE TABLE
+   ============================================================================= */
+
+#filestable,
+#filestable thead tr,
+#filestable thead tr th,
+#filestable tbody tr {
+    background-color: var(--primary-bg);
+}
+
+#filestable tbody tr:hover,
+#filestable tbody tr:focus,
+#filestable tbody .name:focus,
+#filestable tbody tr:active,
+#filestable tbody tr.highlighted,
+#filestable tbody tr.highlighted .name:focus,
+#filestable tbody tr.selected,
+#filestable tbody tr.searchresult,
+tbody tr:hover,
+tbody tr:focus,
+tbody tr:active,
+table tr.mouseOver td {
+	background-color: var(--accent-purple-20);
+}
+
+#fileList .popovermenu .action,
+table th, table th a {
+	color: #4c4;
+}
+
+#filelist {
+    background-color: var(--primary-bg);
+}
+
+.filepicker_element_selected { 
+    background-color: var(--accent-purple-20);
+}
+
+.filepicker_loader {
+    background-color: var(--accent-purple-10); 
 }
 
 /* =============================================================================
