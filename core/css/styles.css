@@ -660,6 +660,7 @@ html #body-login button[type="submit"]:hover {
 
 /* Navigation items */
 #app-navigation,
+.nav-icon-files,
 .nav-trashbin, 
 .settings-button {
 	background-color: var(--primary-bg);
@@ -883,9 +884,12 @@ html #body-login button[type="submit"]:hover {
 
 div.crumb {
 	background-color: var(--primary-bg);
+    color: var(--text-primary)
 }
 
-div.crumb span {
+div.crumb span,
+div.crumb a {
+    background-color: var(--primary-bg);
 	color: var(--text-secondary);
 }
 
@@ -1352,6 +1356,29 @@ a.row-element > .album-label {
 
 .ribbon.black {
 	background-color: var(--secondary-bg);
+}
+
+#controls .button.view-switcher.gallery {
+	background-color: var(--tertiary-bg);
+}
+
+#controls .button.left-switch-button,
+#controls .button.left-switch-button:hover {
+	border-right: 1px solid var(--accent);
+}
+
+#controls .button.view-switcher:hover {
+	background-color: var(--secondary-bg);
+	color: var(--text-primary);
+	border: 1px solid var(--accent);
+}
+
+#controls .button.sorting.active-button,
+#controls .button.sorting.active-button:hover {
+    background-color: var(--secondary-bg);
+	color: var(--text-primary);
+	border: 1px solid var(--accent);
+    border-right-color: var(--border-color-secondary);
 }
 
 /* =============================================================================
