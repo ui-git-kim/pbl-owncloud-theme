@@ -26,6 +26,14 @@ class OC_Theme {
 	}
 
 	/**
+	 * Returns the short name of the software containing HTML strings
+	 * @return string title
+	 */
+	public function getHTMLName() {
+		return '<b>PBL</b> Cloud';
+	}
+
+	/**
 	 * Returns entity (e.g. company name) - used for footer, copyright
 	 * @return string entity name
 	 */
