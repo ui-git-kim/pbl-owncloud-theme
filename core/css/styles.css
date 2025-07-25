@@ -282,6 +282,32 @@ input {
 	display: hidden;
 }
 
+/* Profile picture in header */
+#header .avatardiv {
+	float: left;
+	display: inline-block;
+	margin-right: 8px;
+	cursor: pointer;
+	height: 32px;
+	width: 32px;
+}
+#header .avatardiv img {
+	opacity: 1;
+	cursor: pointer;
+}
+
+#settings {
+	float: right;
+	cursor: pointer;
+}
+
+#settings .icon-loading-small-dark {
+	display: inline-block;
+	margin-bottom: -3px;
+	margin-right: 6px;
+	background-size: 16px 16px;
+}
+
 #expand {
 	color: var(--text-secondary);
 }
@@ -737,6 +763,10 @@ html #body-login button[type="submit"]:hover {
     color: var(--text-primary) !important;
 }
 
+#app-sidebar .file-details {
+	color: var(--accent);
+}
+
 /* =============================================================================
    GENERIC STYLES
    ============================================================================= */
@@ -851,8 +881,12 @@ html #body-login button[type="submit"]:hover {
    BREADCRUMB NAVIGATION
    ============================================================================= */
 
+div.crumb {
+	background-color: var(--primary-bg);
+}
+
 div.crumb span {
-	color: var(--text-primary);
+	color: var(--text-secondary);
 }
 
 div.crumb:hover,
@@ -1152,8 +1186,20 @@ div.multiselect.active {
 }
 
 /* =============================================================================
-   FILE TABLE
+   FILES
    ============================================================================= */
+
+.actions .button a { 
+    color: var(--text-secondary); 
+}
+
+.actions .button a:active {
+	color: var(--accent);
+}
+
+.app-files #app-content {
+	background-color: var(--secondary-bg);
+}
 
 #filestable,
 #filestable thead tr,
@@ -1161,9 +1207,9 @@ div.multiselect.active {
 #filestable tbody tr {
     color: var(--text-primary);
     background-color: var(--secondary-bg);
+    border-bottom: 1px solid var(--border-color-secondary);
 }
 
-/*
 #filestable tbody tr:hover,
 #filestable tbody tr:focus,
 #filestable tbody .name:focus,
@@ -1177,7 +1223,18 @@ tbody tr:focus,
 tbody tr:active,
 table tr.mouseOver td {
 	background-color: var(--accent-purple-20);
-}*/
+}
+
+tbody a { color: var(--text-primary); }
+
+#selectedActionsList a.download.disabled,
+#fileList tr a.action.action-download.disabled {
+	color: var(--text-muted);
+}
+
+.mask {
+	background-color: var(--tertiary-bg);
+}
 
 #fileList .popovermenu .action,
 table th, table th a {
@@ -1185,6 +1242,13 @@ table th, table th a {
     border-top: 1px solid var(--border-color-secondary);
     border-bottom: 1px solid var(--border-color-secondary);
 }
+
+#filestable .filename .action .icon,
+#filestable .selectedActions a .icon,
+#controls .actions .button .icon {
+	color: var(--text-primary)
+}
+
 
 #filelist {
     background-color: var(--secondary-bg);
@@ -1257,6 +1321,37 @@ table th, table th a {
 
 #body-public footer .info a:hover {
     color: var(--accent-dark) !important;
+}
+
+/* =============================================================================
+   GALLERY
+   ============================================================================= */
+
+.album-info-container {
+	background-color: var(--secondary-bg);
+}
+
+#content-wrapper {
+	background-color: var(--primary-bg);
+}
+
+a.row-element > .album-label {
+	color: var(--text-primary);
+}
+
+#gallery > h2 {
+	background: var(--primary-bg);
+	height: 2.8em;
+	border-top: 1px solid var(--border-color-primary);
+	border-bottom: 1px solid var(--border-color-primary);
+}
+
+.ribbon {
+	color: var(--text-primary);
+}
+
+.ribbon.black {
+	background-color: var(--secondary-bg);
 }
 
 /* =============================================================================
