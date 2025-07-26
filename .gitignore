@@ -1,0 +1,14 @@
+# ownCloud reference files (not part of theme)
+owncloud-export/
+reference/
+core-css/
+apps/
+*.tar.gz
+
+# Other common files to ignore
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+node_modules/
+.env
