@@ -882,6 +882,21 @@ html #body-login button[type="submit"]:hover {
    BREADCRUMB NAVIGATION
    ============================================================================= */
 
+.breadcrumb,
+#controls .breadcrumb {
+    background-color: var(--primary-bg);
+    border-bottom: 1px solid var(--border-color-secondary);
+}
+
+.breadcrumb a {
+    color: var(--text-primary);
+}
+
+.breadcrumb a:hover {
+    color: var(--accent-dark);
+    background-color: var(--hover-bg);
+}
+
 div.crumb {
 	background-color: var(--primary-bg);
     color: var(--text-primary)
