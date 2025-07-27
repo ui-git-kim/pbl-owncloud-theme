@@ -627,7 +627,11 @@ html #body-login button[type="submit"]:hover {
 }
 
 #body-login.has-theme .v-align {
-  background-color: unset;
+    background-color: var(--primary-bg);
+    border: 1px solid var(--border-color-primary) !important;
+    border-radius: 15px !important;
+    box-shadow: 0 25px 80px var(--black-bg-10) !important;
+    backdrop-filter: blur(10px) !important;
 }
 
 #notification {
@@ -916,8 +920,9 @@ button.primary:disabled:focus,
 }
 
 #header .logo-icon {
-  color: var(--text-primary);
-  height: 34px;
+    background-image: url(../img/logo-icon.svg);
+    height: 34px;
+    color: var(--text-primary);
 }
 
 .header-appname {
@@ -935,7 +940,7 @@ button.primary:disabled:focus,
 }
 
 #navigation {
-  background-color: var(--dialog-overlay);
+  background-color: var(--primary-bg);
   box-shadow: 0 1px 10px var(--black-bg-10);
 }
 
@@ -957,11 +962,11 @@ button.primary:disabled:focus,
 }
 
 #expand {
-  color: var(--text-muted);
+  color: var(--text-primary);
 }
 
 #expand:after {
-  border-color: var(--text-muted) transparent transparent transparent;
+  border-color: var(--text-primary) transparent transparent transparent;
 }
 
 #expand:hover,
@@ -971,11 +976,11 @@ button.primary:disabled:focus,
 }
 
 #expand:hover:after {
-  border-color: var(--border-color-contrast) transparent transparent transparent;
+  border-color: var(--text-contrast) transparent transparent transparent;
 }
 
 #expanddiv {
-  background-color: var(--dialog-overlay);
+  background-color: var(--primary-bg);
   box-shadow: 0 1px 10px var(--black-bg-10);
 }
 #expanddiv a {
@@ -1014,12 +1019,13 @@ button.primary:disabled:focus,
 }
 
 #app-navigation .active {
-  background-color: var(--secondary-bg);
+  background-color: var(--primary-bg);
+  border-bottom: 1px solid var(--border-color-accent)
 }
 
 #app-navigation li.divider {
   color: var(--text-primary);
-  background-color: var(--secondary-bg);
+  background-color: var(--primary-bg);
   border-bottom: 1px solid var(--border-color-primary);
 }
 
@@ -1153,7 +1159,7 @@ button.primary:disabled:focus,
 }
 
 .tabHeader.selected {
-  border-bottom: 2px solidvar(--border-color-accent);
+  border-bottom: 2px solid var(--border-color-accent);
   color: var(--text-contrast);
 }
 
