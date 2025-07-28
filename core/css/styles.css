@@ -1150,10 +1150,6 @@ button.primary:disabled:focus,
   color: var(--text-primary);
 }
 
-#app-content {
-	background-color: var(--primary-bg);
-}
-
 .dropdown {
   background: var(--tertiary-bg);
   box-shadow: 0 1px 1px var(--black-bg-30);
@@ -1421,6 +1417,10 @@ div.multiselect.active {
 /* AE - Gallery */
 #body-login .error-broken-link {
   color: var(--text-contrast);
+}
+
+.app-gallery {
+  background-color: var(--primary-bg) !important;
 }
 
 #controls .button.view-switcher {
