@@ -1150,6 +1150,10 @@ button.primary:disabled:focus,
   color: var(--text-primary);
 }
 
+#app-content {
+	background-color: var(--primary-bg);
+}
+
 .dropdown {
   background: var(--tertiary-bg);
   box-shadow: 0 1px 1px var(--black-bg-30);
@@ -1419,17 +1423,13 @@ div.multiselect.active {
   color: var(--text-contrast);
 }
 
-#gallery {
-  background-color: var(--primary-bg)
-}
-
 #controls .button.view-switcher {
-  background-color: var(--secondary-bg);
+  background-color: transparent;
   border: 1px solid transparent;
 }
 
 #controls .button.view-switcher.gallery {
-  background-color: var(--secondary-bg);
+  background-color: var(--text-primary);
 }
 
 #controls .button.left-switch-button,
