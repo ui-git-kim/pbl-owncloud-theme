@@ -81,7 +81,7 @@ CSS COLOR VARIABLES
     ============================================================================= */
 
     /* Dark Overlay Effects */
-    --gradient-label: linear-gradient(to bottom, transparent 65%, var(--black-bg-30));
+    --gradient-label: linear-gradient(to bottom, transparent 65%, var(--black-bg-60));
     --gradient-diagonal-stripes: repeating-linear-gradient(45deg, transparent, transparent 20px, var(--black-bg-30) 20px, var(--black-bg-30) 40px);
 
     /* Form Control Gradients (dark theme alternatives) */
@@ -1458,16 +1458,16 @@ div.multiselect.active {
 }
 
 #controls .button.sorting.active-button {
-  background-color: rgba(var(--primary-bg-rgb), 0.9);
+  background-color: rgba(var(--tertiary-bg-rgb), 0.9);
   color: var(--text-contrast);
-  border: 1px solid rgba(var(--primary-bg-rgb), 0.9);
+  border: 1px solid rgba(var(--secondary-bg-rgb), 0.9);
   border-right-color: rgba(var(--tertiary-bg-rgb), 0.9)
 }
 
 #controls .button.sorting.active-button:hover {
-  background-color: rgba(var(--primary-bg-rgb), 0.9);
+  background-color: rgba(var(--secondary-bg-rgb), 0.9);
   color: var(--text-contrast);
-  border: 1px solid rgba(var(--primary-bg-rgb), 0.9);
+  border: 1px solid rgba(var(--tertiary-bg-rgb), 0.9);
   border-right-color: rgba(var(--tertiary-bg-rgb), 0.9)
 }
 
@@ -1697,6 +1697,18 @@ div.multiselect.active {
 
 #content-wrapper {
   background-color: var(--primary-bg);
+}
+
+#gallery .row:first-child {
+	margin-top: 4px;
+}
+
+#gallery .row a:first-child {
+	margin-left: 8px;
+}
+
+a.row-element {
+	margin: 4px;
 }
 
 .album-droppable .album {
