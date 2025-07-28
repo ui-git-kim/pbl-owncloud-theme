@@ -411,7 +411,7 @@ a.two-factor-cancel {
 }
 
 ::-webkit-scrollbar-track-piece {
-  background-color: transparent;
+  background-color: var(--secondary-bg);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -1419,8 +1419,12 @@ div.multiselect.active {
   color: var(--text-contrast);
 }
 
+#gallery {
+  background-color: var(--primary-bg)
+}
+
 #controls .button.view-switcher {
-  background-color: transparent;
+  background-color: var(--secondary-bg);
   border: 1px solid transparent;
 }
 
