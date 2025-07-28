@@ -1829,7 +1829,6 @@ a.row-element > .album-label .title {
   }
   
   #filestable tbody tr {
-    color: var(--text-primary);
     background-color: var(--primary-bg);
   }
   
@@ -1845,7 +1844,7 @@ a.row-element > .album-label .title {
   }
   
   tbody a {
-    color: var(--black-bg-100);
+    color: var(--text-primary);
   }
   
   span.extension,
@@ -1871,11 +1870,11 @@ a.row-element > .album-label .title {
   
   table td,
   table th {
-    border-bottom: 1px solid var(--border-color-secondary);
+    border-bottom: 1px solid var(--border-color-primary);
   }
   
   table thead th {
-    background-color: var(--secondary-bg);
+    background-color: var(--primary-bg);
   }
   
   table.multiselect thead th {
