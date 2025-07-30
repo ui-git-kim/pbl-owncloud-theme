@@ -601,6 +601,58 @@ h2 {color: var(--text-secondary)}
   border: 1px solid var(--warning-color);
 }
 
+/* =============================================================================
+   AUTOFILL OVERRIDE - Add this to your styles.css
+   ============================================================================= */
+
+/* Chrome autofill override */
+#body-login input:-webkit-autofill,
+#body-login input:-webkit-autofill:hover,
+#body-login input:-webkit-autofill:focus,
+#body-login input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px var(--secondary-bg) inset !important;
+    -webkit-text-fill-color: var(--text-secondary) !important;
+    background-color: var(--secondary-bg) !important;
+    border-radius: 2px !important;
+}
+
+/* Firefox autofill override */
+#body-login input:-moz-autofill {
+    background-color: var(--secondary-bg) !important;
+    color: var(--text-secondary) !important;
+}
+
+/* General autofill override for all browsers */
+#body-login input[autocomplete="username"],
+#body-login input[autocomplete="current-password"],
+#body-login input[autocomplete="email"] {
+    background-color: var(--secondary-bg) !important;
+    color: var(--text-secondary) !important;
+    border: none !important;
+    border-bottom: 1px solid var(--border-color-contrast) !important;
+}
+
+/* Force background for specific input types */
+#body-login input[type="text"],
+#body-login input[type="password"],
+#body-login input[type="email"] {
+    background-color: var(--secondary-bg) !important;
+    background-image: none !important;
+    color: var(--text-secondary) !important;
+    border: none !important;
+    border-bottom: 1px solid var(--border-color-contrast) !important;
+    border-radius: 2px !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Additional specificity for autofill states */
+#body-login input[type="text"]:autofill,
+#body-login input[type="password"]:autofill,
+#body-login input[type="email"]:autofill {
+    background-color: var(--secondary-bg) !important;
+    color: var(--text-secondary) !important;
+}
+
 #body-user .warning,
 #body-settings .warning {
   background: var(--warning-bg);
