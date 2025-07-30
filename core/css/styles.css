@@ -103,6 +103,11 @@ CSS COLOR VARIABLES
 
 }
 
+
+fieldset {
+  border: 1px solid var(--border-color-secondary);
+}
+
 /* Vendor - Select2 */
 .select2-container .select2-choice {
   border: 1px solid var(--border-color-primary);
@@ -387,13 +392,15 @@ a {
 }
 
 body {
-  background-color: var(--primary-bg);
+  background-color: var(--primary-bg) !important;
   color: var(--text-primary);
 }
 
 a.two-factor-cancel {
   color: var(--text-primary);
 }
+
+h2 {color: var(--text-secondary)}
 
 #nojavascript {
   background-color: var(--black-bg-60);
@@ -436,7 +443,7 @@ a.two-factor-cancel {
 }
 
 #controls {
-  background-color: rgba(var(--primary-bg-rgb), 0.9);
+  background-color: var(--primary-bg);
 }
 
 #emptycontent,
@@ -529,12 +536,18 @@ a.two-factor-cancel {
   color: var(--text-muted);
 }
 
+#body-login #submit.login {
+	border: none;
+	background-color: transparent;
+}
+
 #body-login .grouptop input,
 .grouptop input,
 #body-login .groupmiddle input,
 .groupmiddle input,
 #body-login .groupbottom input,
-.groupbottom input {
+.groupbottom input,
+#body-login .groupbottom #password {
   box-shadow: 0 1px 0 var(--black-bg-10) inset !important;
 }
 
@@ -551,9 +564,18 @@ a.two-factor-cancel {
   border: 1px solid var(--success-color);
 }
 
+#body-login #remember_login:hover+label,
+#body-login #remember_login:focus+label  {
+	color: var(--text-contrast) !important;
+}
+
 #body-login p.info a,
 #body-login #showAdvanced {
   color: var(--text-primary);
+}
+
+#body-login p.info a:hover, #body-login p.info a:focus {
+	color: var(--text-primary);
 }
 
 #body-login form #selectDbType label {
@@ -596,6 +618,24 @@ a.two-factor-cancel {
 
 .warning-input {
   border-color: var(--warning-color) !important;
+}
+
+span.success {
+	background: var(--success-color);
+}
+
+span.error {
+	background: var(--error-color);
+}
+
+span.indeterminate {
+	background: var(--warning-color);
+}
+
+#postsetupchecks .errors,
+#postsetupchecks .warnings,
+#security-warning > ul {
+	color: var(--error-color);
 }
 
 form#alternative-logins {
@@ -651,6 +691,17 @@ tbody tr:active {
 
 #quota div.quota-warning {
   background-color: var(--warning-color);
+}
+
+select.quota.active { background: var(--primary-bg); }
+
+#userlist tr.row-warning {
+	background-color: var(--warning-color);
+}
+
+.usercount.tag {
+	color: var(--text-contrast);
+	background-color: var(--accent-bg);
 }
 
 .separator {
@@ -745,6 +796,18 @@ input[type="time"],
 textarea {
   background: var(--secondary-bg);
   color: var(--text-primary);
+}
+
+input[type="text"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="time"] {
+	-webkit-appearance:none;
+	-moz-appearance:none;
 }
 
 input[type="text"]:hover,
@@ -1052,6 +1115,18 @@ button.primary:disabled:focus,
   color: var(--error-color);
 }
 
+#app-navigation .appwarning {
+	background: var(--warning-color);
+}
+
+#app-navigation.appwarning:hover {
+	background: var(--error-20);
+}
+
+span.version {
+	color: var(--text-secondary);
+}
+
 #app-navigation .app-navigation-separator {
   border-bottom: 1px solid var(--border-color-secondary);
 }
@@ -1146,6 +1221,25 @@ button.primary:disabled:focus,
   background-color: var(--accent-color-10);
 }
 
+#sslCertificate tr.expired {
+	background-color: var(--error-20);
+}
+
+.msg.success {
+	color: var(--text-contrast);
+	background-color: var(--success-color);
+}
+
+.msg.error {
+	color: var(--text-contrast);
+	background-color: var(--error-color);
+}
+
+#apppasswords .token-list td,
+#sessions .token-list td {
+	border-top: 1px solid (--border-color-ccontrast);
+}
+
 .section {
   color: var(--text-primary);
 }
@@ -1198,6 +1292,50 @@ ul.multiselectoptions.down {
 
 div.multiselect.active {
   background-color: var(--primary-bg);
+}
+
+.app-level span {
+	color: var(--text-primary);
+	background-color: var(--secondary-bg);
+	border: 1px solid var(--border-color-secondary);
+}
+
+.app-level .official {
+	border-color: var(--success-color);
+}
+
+.app-level .approved {
+	border-color: var(--warning-color);
+}
+
+.app-level .experimental {
+	background-color: var(--error-color);
+	border-color: var(--error-color);
+	color: var(--text-contrast);
+}
+
+.apps-experimental {
+	color: var(--error-color);
+}
+
+.app-image-icon img {
+	background-color: var(--tertiary-bg);
+}
+
+.app-dependencies {
+	color: var(--error-color);
+}
+
+.score {
+	color: var(--text-secondary);
+}
+
+.updater-update {
+	background-color: var(--dialod-overlay);
+}
+
+li.failed-step h2{
+	background-color: var(--error-bg);
 }
 
 /* Core Mobile */
@@ -1699,12 +1837,8 @@ div.multiselect.active {
   background-color: var(--primary-bg);
 }
 
-#gallery .row:first-child {
-	margin-top: 4px;
-}
-
-#gallery .row a:first-child {
-	margin-left: 8px;
+#gallery.hascontrols {
+  margin-right: 8px;
 }
 
 a.row-element {
@@ -1892,6 +2026,20 @@ a.row-element > .album-label .title {
   table thead th {
     background-color: var(--primary-bg);
   }
+
+  table.grid th { 
+    height:2em; 
+    color: var(--text-primary); 
+  }
+  table.grid th, 
+  table.grid td { 
+    border-bottom:1px solid var(--border-color-secondary);
+  }
+
+  td.password>span, 
+  td.quota>span, 
+  rd.displayName>span { 
+    color: var(--text-secondary); }
   
   table.multiselect thead th {
     background-color: rgba(var(--primary-bg-rgb), 0.9);
@@ -1933,6 +2081,10 @@ a.row-element > .album-label .title {
   
   .oc-dialog .fileexists .conflict .filename {
     color: var(--text-secondary);
+  }
+
+  #userlist th.name {
+    color: var(--text-contrast);
   }
 
   /* APPS - File Sharing */
