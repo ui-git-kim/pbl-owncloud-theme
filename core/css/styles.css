@@ -632,6 +632,39 @@ h2 {color: var(--text-secondary)}
     border-bottom: 1px solid var(--border-color-contrast) !important;
 }
 
+/* Aggressive password field targeting */
+#body-login input[type="password"],
+#body-login input[name="password"],
+#body-login input[id*="password"],
+#body-login input[class*="password"] {
+    background-color: var(--secondary-bg) !important;
+    background-image: none !important;
+    color: var(--text-secondary) !important;
+    border: none !important;
+    border-bottom: 1px solid var(--border-color-contrast) !important;
+    border-radius: 2px !important;
+}
+
+/* Password autofill specific overrides */
+#body-login input[type="password"]:-webkit-autofill,
+#body-login input[type="password"]:-webkit-autofill:hover,
+#body-login input[type="password"]:-webkit-autofill:focus,
+#body-login input[type="password"]:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px var(--secondary-bg) inset !important;
+    -webkit-text-fill-color: var(--text-secondary) !important;
+    background-color: var(--secondary-bg) !important;
+    border-radius: 2px !important;
+}
+
+/* Force password field styling with highest specificity */
+#body-login form input[type="password"] {
+    background-color: var(--secondary-bg) !important;
+    background-image: none !important;
+    color: var(--text-secondary) !important;
+    border: none !important;
+    border-bottom: 1px solid var(--border-color-contrast) !important;
+}
+
 /* Force background for specific input types */
 #body-login input[type="text"],
 #body-login input[type="password"],
