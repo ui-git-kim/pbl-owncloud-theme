@@ -1644,6 +1644,10 @@ li.failed-step h2{
   color: var(--text-contrast);
 }
 
+#content-wrapper{
+  background-color: var(--primary-bg) !important;
+}
+
 .app-gallery {
   background-color: var(--primary-bg) !important;
 }
