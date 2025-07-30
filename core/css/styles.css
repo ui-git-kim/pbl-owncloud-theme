@@ -548,6 +548,8 @@ h2 {color: var(--text-secondary)}
 #body-login .groupbottom input,
 .groupbottom input,
 #body-login .groupbottom #password {
+  background-color: var(--secondary-bg);
+  border-bottom: 1px solid var(--border-color-contrast);
   box-shadow: 0 1px 0 var(--black-bg-10) inset !important;
 }
 
