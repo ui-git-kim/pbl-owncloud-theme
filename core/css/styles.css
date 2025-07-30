@@ -547,7 +547,7 @@ h2 {color: var(--text-secondary)}
 .groupmiddle input,
 #body-login .groupbottom input,
 .groupbottom input,
-#body-login .groupbottom #password {
+#body-login .groupbottom #password, input#user, input#password {
   background-color: var(--secondary-bg) !important;
   border-bottom: 1px solid var(--border-color-contrast) !important;
   box-shadow: 0 1px 0 var(--black-bg-10) inset !important;
