@@ -616,6 +616,12 @@ h2 {color: var(--text-secondary)}
     border-radius: 2px !important;
 }
 
+#body-login input[type="password"]:-webkit-text-security {
+  background-color: var(--secondary-bg) !important;
+  color: var(--text-primary) !important;
+  border-bottom: 1px solid var(--border-color-secondary) !important;
+}
+
 /* Firefox autofill override */
 #body-login input:-moz-autofill {
     background-color: var(--secondary-bg) !important;
