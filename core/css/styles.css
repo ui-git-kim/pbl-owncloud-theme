@@ -1218,6 +1218,10 @@ button.primary:disabled:focus,
   border-bottom: 1px solid var(--border-color-primary);
 }
 
+.nav-icon-files {
+  color: var(--text-primary);
+}
+
 #app-navigation .collapsible.open {
   background-image: var(--gradient-nav-collapsible);
 }
@@ -1687,7 +1691,8 @@ li.failed-step h2{
 }
 
 #controls .button.view-switcher {
-  background-color: transparent;
+  background-color: var(--secondary-bg);
+  color: var(--accent);
   border: 1px solid transparent;
 }
 
@@ -2174,6 +2179,10 @@ a.row-element > .album-label .title {
     .thumbnail.sharetree-item:after {
     background-color: var(--secondary-bg);
   }
+
+  #fileList tr td.filename .action-favorite {
+    color: var(--secondary-bg);
+  }
   
   #fileList tr a.action.action-download.disabled,
   #selectedActionsList a.download.disabled {
@@ -2187,6 +2196,14 @@ a.row-element > .album-label .title {
     background-color: transparent;
   }
   
+  table td.filename .thumbnail {
+    color: var(--accent);
+  }
+
+  .column-last > span:first-child, .modified {
+    color: var(--text-primary);
+  }
+
   #filestable tbody tr.canDrop,
   .canDrop {
     background-color: var(--accent-color-40);
@@ -2206,6 +2223,10 @@ a.row-element > .album-label .title {
 
   #userlist th.name {
     color: var(--text-contrast);
+  }
+
+  .app-files .actions .button.new .icon {
+    color: var(--accent);
   }
 
   /* APPS - File Sharing */
