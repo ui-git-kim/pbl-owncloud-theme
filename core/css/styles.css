@@ -616,12 +616,6 @@ h2 {color: var(--text-secondary)}
     border-radius: 2px !important;
 }
 
-#body-login input[type="password"]:-webkit-text-security {
-  background-color: var(--secondary-bg) !important;
-  color: var(--text-primary) !important;
-  border-bottom: 1px solid var(--border-color-secondary) !important;
-}
-
 /* Firefox autofill override */
 #body-login input:-moz-autofill {
     background-color: var(--secondary-bg) !important;
@@ -638,37 +632,54 @@ h2 {color: var(--text-secondary)}
     border-bottom: 1px solid var(--border-color-contrast) !important;
 }
 
-/* Aggressive password field targeting */
+/* Force all autofill states for password fields */
 #body-login input[type="password"],
-#body-login input[name="password"],
-#body-login input[id*="password"],
-#body-login input[class*="password"] {
-    background-color: var(--secondary-bg) !important;
-    background-image: none !important;
-    color: var(--text-secondary) !important;
-    border: none !important;
-    border-bottom: 1px solid var(--border-color-contrast) !important;
-    border-radius: 2px !important;
-}
-
-/* Password autofill specific overrides */
 #body-login input[type="password"]:-webkit-autofill,
 #body-login input[type="password"]:-webkit-autofill:hover,
 #body-login input[type="password"]:-webkit-autofill:focus,
 #body-login input[type="password"]:-webkit-autofill:active {
+    /* Override background with box-shadow trick */
     -webkit-box-shadow: 0 0 0 30px var(--secondary-bg) inset !important;
+    box-shadow: 0 0 0 30px var(--secondary-bg) inset !important;
+    
+    /* Force text color */
     -webkit-text-fill-color: var(--text-secondary) !important;
-    background-color: var(--secondary-bg) !important;
+    color: var(--text-secondary) !important;
+    
+    /* Remove any background */
+    background-color: transparent !important;
+    background-image: none !important;
+    background: transparent !important;
+    
+    /* Borders */
+    border: none !important;
+    border-bottom: 1px solid var(--text-primary) !important;
     border-radius: 2px !important;
+    
+    /* Ensure text security still works */
+    -webkit-text-security: disc !important;
 }
 
-/* Force password field styling with highest specificity */
-#body-login form input[type="password"] {
+/* Alternative method using transition delay trick */
+#body-login input[type="password"]:-webkit-autofill {
+    -webkit-transition-delay: 9999s !important;
+    -webkit-transition-property: background-color, color !important;
+}
+
+/* Force styling on the wrapper/container if needed */
+#body-login .grouptop,
+#body-login .groupmiddle, 
+#body-login .groupbottom {
     background-color: var(--secondary-bg) !important;
-    background-image: none !important;
+}
+
+/* Ultra-specific targeting */
+#body-login form fieldset .grouptop input[type="password"],
+#body-login form fieldset .groupmiddle input[type="password"],
+#body-login form fieldset .groupbottom input[type="password"] {
+    background-color: var(--secondary-bg) !important;
+    background: var(--secondary-bg) !important;
     color: var(--text-secondary) !important;
-    border: none !important;
-    border-bottom: 1px solid var(--border-color-contrast) !important;
 }
 
 /* Force background for specific input types */
