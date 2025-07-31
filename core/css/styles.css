@@ -927,6 +927,12 @@ textarea:active {
   color: var(--text-primary);
 }
 
+input[type="password"]:-webkit-text-security{
+  background-color: var(--secondary-bg);
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-color-secondary);
+}
+
 input[type="checkbox"].checkbox:hover + label:before,
 input[type="checkbox"]:focus + label:before {
   color: var(--text-contrast) !important;
@@ -1922,10 +1928,6 @@ li.failed-step h2{
 .album-info-container {
   background-color: var(--tertiary-bg);
   box-shadow: 0 1px 1px var(--black-bg-30);
-}
-
-#content-wrapper {
-  background-color: var(--primary-bg);
 }
 
 #gallery.hascontrols {
