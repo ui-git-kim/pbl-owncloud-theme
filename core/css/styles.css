@@ -666,13 +666,6 @@ h2 {color: var(--text-secondary)}
     -webkit-transition-property: background-color, color !important;
 }
 
-/* Force styling on the wrapper/container if needed */
-#body-login .grouptop,
-#body-login .groupmiddle, 
-#body-login .groupbottom {
-    background-color: var(--secondary-bg) !important;
-}
-
 /* Ultra-specific targeting */
 #body-login form fieldset .grouptop input[type="password"],
 #body-login form fieldset .groupmiddle input[type="password"],
