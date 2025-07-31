@@ -101,6 +101,15 @@ CSS COLOR VARIABLES
     --gradient-accent: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
     --gradient-accent-hover: linear-gradient(135deg, var(--accent-dark) 0%, var(--accent) 100%);
 
+    /* =============================================================================
+    RADIUS
+    ============================================================================= */
+
+    --small-radius: 4px;
+    --medium-radius: 8px;
+    --large-radius: 12px;
+    --pill-radius: 9999px;
+
 }
 
 
@@ -194,6 +203,7 @@ html[dir="rtl"] .select2-container .select2-choice .select2-arrow {
 
 .select2-search input {
   border: 1px solid var(--border-color-contrast);
+  border-radius: var(--small-radius);
   background: var(--primary-bg) url("select2.png") no-repeat 100% -22px;
   background: url("select2.png") no-repeat 100% -22px,
     -webkit-gradient(linear, left bottom, left top, color-stop(0.85, var(--primary-bg)), color-stop(0.99, var(--tertiary-bg)));
@@ -423,7 +433,7 @@ h2 {color: var(--text-secondary)}
 
 ::-webkit-scrollbar-thumb {
     background: var(--tertiary-bg);
-    border-radius: 6px;
+    border-radius: var(--medium-radius)
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -551,6 +561,7 @@ h2 {color: var(--text-secondary)}
   background-color: var(--secondary-bg) !important;
   border-bottom: 1px solid var(--border-color-contrast) !important;
   box-shadow: 0 1px 0 var(--black-bg-10) inset !important;
+  border-radius: var(--small-radius);
 }
 
 .loading-spinner div {
@@ -613,7 +624,7 @@ h2 {color: var(--text-secondary)}
     -webkit-box-shadow: 0 0 0 30px var(--secondary-bg) inset !important;
     -webkit-text-fill-color: var(--text-secondary) !important;
     background-color: var(--secondary-bg) !important;
-    border-radius: 2px !important;
+    border-radius: var(--small-radius) !important;
 }
 
 /* Firefox autofill override */
@@ -654,7 +665,7 @@ h2 {color: var(--text-secondary)}
     /* Borders */
     border: none !important;
     border-bottom: 1px solid var(--text-primary) !important;
-    border-radius: 2px !important;
+    border-radius: var(--small-radius) !important;
     
     /* Ensure text security still works */
     -webkit-text-security: disc !important;
@@ -684,7 +695,7 @@ h2 {color: var(--text-secondary)}
     color: var(--text-secondary) !important;
     border: none !important;
     border-bottom: 1px solid var(--border-color-contrast) !important;
-    border-radius: 2px !important;
+    border-radius: var(--small-radius) !important;
     transition: all 0.3s ease !important;
 }
 
@@ -745,6 +756,7 @@ html #body-login button[type="submit"] {
   color: var(--text-contrast);
   border-color: var(--black-bg-100);
   background-color: var(--accent-bg);
+  border-radius: var(--small-radius);
 }
 
 #alternative-logins li a.button:hover,
@@ -753,13 +765,14 @@ html #body-login button[type="submit"]:hover {
   color: var(--text-contrast);
   border-color: var(--accent-dark);
   background-color: var(--accent-dark);
+  border-radius: var(--small-radius);
 }
 
 /* Vertical alignment container */
 #body-login .v-align {
     background-color: var(--dialog-bg);
     border: 1px solid var(--border-color-primary) !important;
-    border-radius: 15px !important;
+    border-radius: var(--large-radius) !important;
     box-shadow: 0 25px 80px var(--black-bg-10) !important;
     backdrop-filter: blur(10px) !important;
 }
@@ -767,7 +780,7 @@ html #body-login button[type="submit"]:hover {
 #body-login.has-theme .v-align {
     background-color: var(--dialog-bg);
     border: 1px solid var(--border-color-primary) !important;
-    border-radius: 15px !important;
+    border-radius: var(--large-radius) !important;
     box-shadow: 0 25px 80px var(--black-bg-10) !important;
     backdrop-filter: blur(10px) !important;
 }
@@ -879,7 +892,9 @@ input[type="button"],
 .pager li a {
   background-color: var(--secondary-bg);
   color: var(--text-primary);
-  border: 1px solid var(--border-color-secondary);
+  border: none;
+  border-bottom: 1px solid var(--border-color-contrast);
+  border-radius: var(--small-radius);
 }
 
 input[type="text"],
@@ -934,13 +949,11 @@ input[type="time"]:active,
 textarea:hover,
 textarea:focus,
 textarea:active {
-  color: var(--text-primary);
-}
-
-input[type="password"]:-webkit-text-security{
   background-color: var(--secondary-bg);
   color: var(--text-primary);
-  border-bottom: 1px solid var(--border-color-secondary);
+  border: none;
+  border-bottom: 1px solid var(--accent);
+  border-radius: var(--small-radius);
 }
 
 input[type="checkbox"].checkbox:hover + label:before,
@@ -968,6 +981,7 @@ select:hover {
 input[type="submit"].enabled {
   background-color: var(--success-color);
   border: 1px solid var(--success-color);
+  border-radius: var(--small-radius);
 }
 
 .input-button-inline {
@@ -984,6 +998,7 @@ select,
   background-color: var(--secondary-bg);
   color: var(--text-primary);
   border: 1px solid var(--border-color-secondary);
+  border-radius: var(--small-radius);
 }
 
 input[type="submit"]:hover,
@@ -1000,6 +1015,7 @@ select:focus,
 select:active {
   background-color: rgba(var(--primary-bg-rgb), 0.9);
   color: var(--text-contrast);
+  border-radius: var(--small-radius);
 }
 
 input:disabled,
@@ -1032,6 +1048,7 @@ button.primary,
   border: 1px solid var(--border-color-accent);
   background-color: var(--accent-bg);
   color: var(--text-contrast);
+  border-radius: var(--small-radius);
 }
 .primary:hover,
 input[type="submit"].primary:hover,
@@ -1295,6 +1312,7 @@ span.version {
 
 #app-navigation .app-navigation-entry-edit input {
   border: 1px solid var(--border-color-primary);
+  border-radius: var(--small-radius);
 }
 
 #app-sidebar {
